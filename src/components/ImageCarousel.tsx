@@ -74,7 +74,7 @@ const ImageCarousel = () => {
             <img
               src={images[nextIndex]}
               alt={`Slide ${nextIndex + 1}`}
-              className="w-full h-[250px] rounded-lg object-cover"
+              className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
               width={300}
