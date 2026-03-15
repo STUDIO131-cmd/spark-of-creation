@@ -45,7 +45,7 @@ interface CaseCardProps {
 }
 
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
-  <div className="card-dark p-5 flex flex-col">
+  <div className="card-dark p-5 h-full">
     {/* Imagem com aspect-ratio fixo 4:3 */}
     <div className="mb-4 overflow-hidden rounded-lg aspect-[4/3]">
       <img
@@ -57,7 +57,7 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
     </div>
 
     {/* Conteúdo */}
-    <div className="flex-1 flex flex-col">
+    <div>
       <h3 
         className="font-moneta font-semibold mb-2 text-2xl md:text-3xl"
         style={{ color: '#F6FAFF' }}
@@ -89,17 +89,10 @@ const CasesSection = () => {
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Grid com items-stretch para igualar alturas */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
-        {cases.slice(0, 3).map((caseItem, index) => (
+      {/* Grid único com todos os 5 cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto auto-rows-fr">
+        {cases.map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
-        ))}
-      </div>
-
-      {/* Row 2: 2 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto items-stretch">
-        {cases.slice(3, 5).map((caseItem, index) => (
-          <CaseCard key={index + 3} {...caseItem} />
         ))}
       </div>
     </section>
