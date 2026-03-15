@@ -47,7 +47,7 @@ const CasesSection = () => {
         {cases.map((caseItem, index) => (
           <div
               key={index}
-              className={`card-dark p-6 flex flex-col ${index >= 3 ? 'lg:col-span-1 lg:col-start-2' : ''}`}
+              className={{`card-dark p-6 flex flex-col ${index >= 3 ? 'lg:col-span-1 lg:col-start-2' : ''}`}
             >
             <div className="mb-4 overflow-hidden rounded-lg">
               <img
