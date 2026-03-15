@@ -20,37 +20,37 @@ para o próximo passo:
           </p>
         </div>
 
-        <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-video max-h-[450px]">
-          {!isPlaying ?
-          <div
-            className="relative cursor-pointer group w-full h-full"
-            onClick={() => setIsPlaying(true)}>
-            
-              <img
-              src="https://www.studio131.com.br/wp-content/uploads/2026/02/Capas-4.jpg"
-              alt="Vídeo O Plano Profissional"
-              className="w-full h-full object-cover"
-              width={800}
-              height={450} />
-            
-              
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="black">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
+        <div className="flex justify-center">
+          <div className="w-full max-w-[320px] md:max-w-[360px]">
+            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
+              {!isPlaying ? (
+                <div
+                  className="relative cursor-pointer group w-full h-full"
+                  onClick={() => setIsPlaying(true)}>
+                  <img
+                    src="https://www.studio131.com.br/wp-content/uploads/2026/02/Capas-4.jpg"
+                    alt="Vídeo O Plano Profissional"
+                    className="w-full h-full object-cover"
+                    width={320}
+                    height={569} />
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="black">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div> :
-
-          <video
-            src="https://www.studio131.com.br/wp-content/uploads/2026/02/PP-VSL.mp4"
-            controls
-            autoPlay
-            className="w-full h-full"
-            style={{ objectFit: 'contain' }} />
-
-          }
+              ) : (
+                <video
+                  src="https://www.studio131.com.br/wp-content/uploads/2026/02/PP-VSL.mp4"
+                  controls
+                  autoPlay
+                  className="w-full h-full"
+                  style={{ objectFit: 'contain' }} />
+              )}
+            </div>
+          </div>
         </div>
 
         <a
