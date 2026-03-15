@@ -32,9 +32,9 @@ const differentials = [
 
 const DifferentialsSection = () => {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-12 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {differentials.map((item, index) => (
             <div key={index} className="card-dark overflow-hidden">
               <div className="aspect-video overflow-hidden">
@@ -42,22 +42,25 @@ const DifferentialsSection = () => {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={600}
+                  height={338}
                 />
               </div>
               
-              <div className="p-6">
-                <h3 className="font-body text-xl font-medium mb-3" style={{ color: '#F6FAFF' }}>
+              <div className="p-5">
+                <h3 className="font-moneta text-xl font-medium mb-3" style={{ color: '#F6FAFF' }}>
                   {item.title}
                 </h3>
                 
-                <p className="font-ui text-base leading-relaxed mb-3" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
+                <p className="font-tiktok text-base leading-relaxed mb-3" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
                   {item.description}
                 </p>
                 
                 {item.team && (
                   <ul className="space-y-1 mt-4">
                     {item.team.map((member, i) => (
-                      <li key={i} className="font-ui text-sm" style={{ color: '#E6B281' }}>
+                      <li key={i} className="font-tiktok text-sm" style={{ color: '#E6B281' }}>
                         {member}
                       </li>
                     ))}
@@ -65,7 +68,7 @@ const DifferentialsSection = () => {
                 )}
                 
                 {item.highlight && (
-                  <p className="font-ui text-sm font-medium mt-4" style={{ color: '#E6B281' }}>
+                  <p className="font-tiktok text-sm font-medium mt-4" style={{ color: '#E6B281' }}>
                     {item.highlight}
                   </p>
                 )}
