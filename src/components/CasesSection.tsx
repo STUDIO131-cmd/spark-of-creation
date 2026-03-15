@@ -45,7 +45,10 @@ const CasesSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {cases.map((caseItem, index) => (
-          <div key={index} className="card-dark p-6 flex flex-col">
+          <div
+              key={index}
+              className={`card-dark p-6 flex flex-col ${index >= 3 ? 'lg:col-span-1 lg:col-start-2' : ''}`}
+            >
             <div className="mb-4 overflow-hidden rounded-lg">
               <img
                 src={caseItem.image}
