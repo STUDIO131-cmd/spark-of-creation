@@ -50,7 +50,7 @@ const ImageCarousel = () => {
             <img
               src={images[prevIndex]}
               alt={`Slide ${prevIndex + 1}`}
-              className="w-full h-[250px] rounded-lg object-cover"
+              className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
               width={300}
@@ -63,7 +63,7 @@ const ImageCarousel = () => {
             <img
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
-              className="w-full max-h-[300px] md:max-h-[400px] rounded-lg object-cover mx-auto"
+              className="w-full rounded-lg object-contain mx-auto"
               width={500}
               height={400}
             />
@@ -74,7 +74,7 @@ const ImageCarousel = () => {
             <img
               src={images[nextIndex]}
               alt={`Slide ${nextIndex + 1}`}
-              className="w-full h-[250px] rounded-lg object-cover"
+              className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
               width={300}
