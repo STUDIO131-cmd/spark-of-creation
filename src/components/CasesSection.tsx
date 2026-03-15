@@ -45,28 +45,28 @@ interface CaseCardProps {
 }
 
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
-  <div className="card-dark p-5 flex flex-col" style={{ height: '520px' }}>
-    {/* Imagem com altura fixa */}
-    <div className="mb-4 overflow-hidden rounded-lg flex-shrink-0" style={{ height: '200px' }}>
+  <div className="card-dark p-5 flex flex-col h-full">
+    {/* Imagem com proporção original */}
+    <div className="mb-4 overflow-hidden rounded-lg">
       <img
         src={image}
         alt={name}
-        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
         loading="lazy"
       />
     </div>
 
     {/* Conteúdo */}
-    <div className="flex-1 flex flex-col overflow-hidden">
+    <div className="flex-1 flex flex-col">
       <h3 
-        className="font-moneta font-medium mb-2 text-xl md:text-2xl flex-shrink-0"
+        className="font-moneta font-semibold mb-2 text-2xl md:text-3xl"
         style={{ color: '#F6FAFF' }}
       >
         {emoji} {name}
       </h3>
       
       <p 
-        className="font-tiktok text-sm mb-3 flex-shrink-0"
+        className="font-tiktok text-sm mb-3"
         style={{ color: '#E6B281' }}
       >
         {area}
@@ -74,13 +74,7 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
       
       <p 
         className="font-tiktok text-sm leading-relaxed"
-        style={{ 
-          color: 'rgba(229, 229, 229, 0.57)',
-          display: '-webkit-box',
-          WebkitLineClamp: 6,
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden'
-        }}
+        style={{ color: 'rgba(229, 229, 229, 0.57)' }}
       >
         {description}
       </p>
@@ -96,14 +90,14 @@ const CasesSection = () => {
       </h2>
 
       {/* Row 1: 3 cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
         {cases.slice(0, 3).map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
         ))}
       </div>
 
       {/* Row 2: 2 cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto">
         {cases.slice(3, 5).map((caseItem, index) => (
           <CaseCard key={index + 3} {...caseItem} />
         ))}
