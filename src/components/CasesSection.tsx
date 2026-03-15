@@ -38,24 +38,27 @@ const cases = [
 
 const CasesSection = () => {
   return (
-    <section className="bg-white" style={{ padding: '0 5vw 5vw 5vw' }}>
-      <h2 className="font-ui text-center text-2xl md:text-3xl font-semibold py-8 px-4">
+    <section className="bg-white px-4 sm:px-6 md:px-8 pb-10 md:pb-16">
+      <h2 className="font-ui text-center text-xl sm:text-2xl md:text-3xl font-semibold py-8">
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
         {cases.map((caseItem, index) => (
-          <div key={index} className="card-dark p-6 flex flex-col">
+          <div key={index} className="card-dark p-4 md:p-6 flex flex-col">
             <div className="mb-4 overflow-hidden rounded-lg">
               <img
                 src={caseItem.image}
                 alt={caseItem.name}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                width={400}
+                height={300}
+                loading="lazy"
+                className="w-full max-w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
 
             <div className="flex-1">
-              <h3 className="font-body text-xl font-medium mb-2" style={{ color: '#F6FAFF' }}>
+              <h3 className="font-body text-lg md:text-xl font-medium mb-2" style={{ color: '#F6FAFF' }}>
                 {caseItem.emoji} {caseItem.name}
               </h3>
               
@@ -63,7 +66,7 @@ const CasesSection = () => {
                 {caseItem.area}
               </p>
               
-              <p className="font-ui text-base leading-relaxed" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
+              <p className="font-ui text-sm md:text-base leading-relaxed" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
                 {caseItem.description}
               </p>
             </div>
