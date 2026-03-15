@@ -19,11 +19,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent("Novo lead - O Plano Profissional");
-    const body = encodeURIComponent(
-      `Nome: ${formData.nome} ${formData.sobrenome}\nWhatsApp: ${formData.whatsapp}\nÁrea correta: ${formData.areaCorreta}\nÁrea de atuação: ${formData.areaAtuacao}\nTime comercial: ${formData.timeComercial}\nFaturamento: ${formData.faturamento}\nUrgência: ${formData.urgencia}`
-    );
-    window.location.href = `mailto:igorgagliardi@studio131.com?subject=${subject}&body=${body}`;
+    console.log("Form data:", formData);
     alert("Formulário enviado com sucesso!");
   };
 
