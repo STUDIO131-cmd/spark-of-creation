@@ -44,33 +44,29 @@ interface CaseCardProps {
   image: string;
 }
 
-const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) =>
-<div className="card-dark p-5 flex flex-col">
-    <div className="mb-4 overflow-hidden rounded-lg">
+const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
+  <div className="card-dark p-5 flex flex-col h-full min-h-[480px] md:min-h-[520px]">
+    <div className="mb-4 overflow-hidden rounded-lg h-[200px] md:h-[220px]">
       <img
-      src={image}
-      alt={name}
-      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-      loading="lazy"
-      width={400}
-      height={300} />
-    
+        src={image}
+        alt={name}
+        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
     </div>
-
-    <div className="flex-1">
+    <div className="flex-1 flex flex-col">
       <h3 className="font-moneta font-medium mb-2 text-2xl font-sans text-[#dae0e2]" style={{ color: '#F6FAFF' }}>
         {emoji} {name}
       </h3>
-      
       <p className="font-tiktok text-sm mb-3" style={{ color: '#E6B281' }}>
         {area}
       </p>
-      
-      <p className="font-tiktok text-sm leading-relaxed" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
+      <p className="font-tiktok text-sm leading-relaxed flex-1" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
         {description}
       </p>
     </div>
-  </div>;
+  </div>
+);
 
 
 const CasesSection = () => {

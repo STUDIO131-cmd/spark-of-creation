@@ -32,11 +32,11 @@ const HeroSection = () => {
       </p>
 
       {/* Main description */}
-      <p className="font-tiktok text-white/90 text-center text-base md:text-lg leading-relaxed mt-6 max-w-xl tracking-wide">
-        Nós operamos a estratégia de comunicação<br />
-        enquanto o dono segue focado na operação<br />
-        do negócio.
-      </p>
+      <div className="font-tiktok text-white/90 text-center text-base md:text-lg leading-relaxed mt-6 max-w-xl tracking-wide">
+        <p>Nós operamos a estratégia de comunicação</p>
+        <p>enquanto o dono segue focado na operação</p>
+        <p>do negócio.</p>
+      </div>
     </section>
   );
 };

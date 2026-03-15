@@ -9,14 +9,16 @@ const CtaSection = () => {
           Nossa régua é simples:
         </p>
 
-        <h2 
+        <div 
           className="font-tiktok text-xl md:text-2xl font-normal leading-relaxed mb-8"
           style={{ color: '#E3E4E3' }}
         >
-          Para cada R$1 investido, construímos<br />
-          estruturas capazes de retornar{" "}
-          <strong style={{ color: '#CF8B46' }}>20x ou mais</strong>.
-        </h2>
+          <p>Para cada R$1 investido, construímos</p>
+          <p>
+            estruturas capazes de retornar{" "}
+            <strong style={{ color: '#CF8B46' }}>20x ou mais</strong>.
+          </p>
+        </div>
 
         <a 
           href="#orcamento" 
