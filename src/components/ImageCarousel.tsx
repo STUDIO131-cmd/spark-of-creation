@@ -63,7 +63,7 @@ const ImageCarousel = () => {
             <img
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
-              className="w-full max-h-[300px] md:max-h-[400px] rounded-lg object-cover mx-auto"
+              className="w-full rounded-lg object-contain mx-auto"
               width={500}
               height={400}
             />
