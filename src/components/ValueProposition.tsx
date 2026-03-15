@@ -5,7 +5,7 @@ const ValueProposition = () => {
     <section className="py-6 px-4 bg-black">
       <div className="max-w-3xl mx-auto text-center">
         <h2
-          className="font-ui text-xl md:text-2xl font-normal leading-[1.3] mb-6"
+          className="font-tiktok text-xl md:text-2xl font-normal leading-[1.3] mb-6"
           style={{ color: '#E3E4E3' }}
         >
           <br />
@@ -20,7 +20,7 @@ const ValueProposition = () => {
 
         <a
           href="#conteudo"
-          className="inline-flex items-center gap-3 btn-gold text-lg"
+          className="inline-flex items-center gap-3 btn-gold text-lg font-tiktok"
         >
           <Clock size={20} />
           <span>Vídeo 2 min | Entenda o Plano na Prática</span>
