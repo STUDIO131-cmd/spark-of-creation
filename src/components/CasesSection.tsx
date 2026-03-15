@@ -45,13 +45,13 @@ interface CaseCardProps {
 }
 
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
-  <div className="card-dark p-5 flex flex-col h-full">
-    {/* Imagem com proporção original */}
-    <div className="mb-4 overflow-hidden rounded-lg">
+  <div className="card-dark p-5 flex flex-col">
+    {/* Imagem com aspect-ratio fixo 4:3 */}
+    <div className="mb-4 overflow-hidden rounded-lg aspect-[4/3]">
       <img
         src={image}
         alt={name}
-        className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         loading="lazy"
       />
     </div>
@@ -89,15 +89,15 @@ const CasesSection = () => {
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Row 1: 3 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      {/* Grid com items-stretch para igualar alturas */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
         {cases.slice(0, 3).map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
         ))}
       </div>
 
       {/* Row 2: 2 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto items-stretch">
         {cases.slice(3, 5).map((caseItem, index) => (
           <CaseCard key={index + 3} {...caseItem} />
         ))}
