@@ -10,7 +10,6 @@ const services = [
 ];
 
 const ServicesTicker = () => {
-  // Duplicamos para efeito infinito
   const duplicatedServices = [...services, ...services];
 
   return (
@@ -24,16 +23,10 @@ const ServicesTicker = () => {
             key={index}
             className="flex items-center gap-4 px-6 whitespace-nowrap"
           >
-            <span 
-              className="text-2xl"
-              style={{ color: '#E6B281' }}
-            >
+            <span style={{ color: '#E6B281' }} className="text-2xl">
               {service.icon}
             </span>
-            <span 
-              className="font-ui text-base"
-              style={{ color: '#F6FAFF' }}
-            >
+            <span style={{ color: '#F6FAFF' }} className="font-ui text-base">
               {service.text}
             </span>
           </div>

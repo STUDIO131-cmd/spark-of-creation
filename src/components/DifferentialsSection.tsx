@@ -1,9 +1,7 @@
-import { motion } from "framer-motion";
-
 const differentials = [
   {
     title: "Sistema CRM + Comercial",
-    description: "Desenvolvemos um sistema próprio de CRM e acompanhamento comercial para uso diário de vendedores e secretárias. Com ele, organizamos a rotina de atendimento e transformamos conversas em dados, entregando análises e indicadores claros de eficiência e performance.",
+    description: "Desenvolvemos um sistema próprio de CRM e acompanhamento comercial para uso diário de vendedores e secretárias.",
     highlight: "Scripts + Rotina + Geração de Demanda + Métricas",
     image: "https://www.studio131.com.br/wp-content/uploads/2026/02/8-1.png"
   },
@@ -22,12 +20,12 @@ const differentials = [
   },
   {
     title: "Resultados sólidos e experiência em tráfego orgânico",
-    description: "Incentivamos e estudamos a fundo a geração de demanda com conteúdo orgânico, reduzindo a dependência e o investimento em mídia paga.",
+    description: "Incentivamos e estudamos a fundo a geração de demanda com conteúdo orgânico, reduzindo a dependência de mídia paga.",
     image: "https://www.studio131.com.br/wp-content/uploads/2026/02/7-1.png"
   },
   {
     title: "Atendemos em estúdio ou in loco",
-    description: "No Plano Profissional, nossa atuação é somente na região de Catanduva (SP), onde temos escritório e estúdio próprio pra atender nossos clientes com estrutura completa. As captações acontecem na cidade e nos arredores, em estúdio ou no local indicado, pra garantir diversidade.",
+    description: "No Plano Profissional, atuamos somente na região de Catanduva (SP), onde temos escritório e estúdio próprio.",
     image: "https://www.studio131.com.br/wp-content/uploads/2026/02/6-1.png"
   }
 ];
@@ -38,15 +36,7 @@ const DifferentialsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {differentials.map((item, index) => (
-            <motion.div
-              key={index}
-              className="card-dark overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              {/* Imagem */}
+            <div key={index} className="card-dark overflow-hidden">
               <div className="aspect-video overflow-hidden">
                 <img
                   src={item.image}
@@ -55,48 +45,32 @@ const DifferentialsSection = () => {
                 />
               </div>
               
-              {/* Conteúdo */}
               <div className="p-6">
-                <h3 
-                  className="font-body text-xl font-medium mb-3"
-                  style={{ color: '#F6FAFF' }}
-                >
+                <h3 className="font-body text-xl font-medium mb-3" style={{ color: '#F6FAFF' }}>
                   {item.title}
                 </h3>
                 
-                <p 
-                  className="font-ui text-base leading-relaxed mb-3"
-                  style={{ color: 'rgba(229, 229, 229, 0.57)' }}
-                >
+                <p className="font-ui text-base leading-relaxed mb-3" style={{ color: 'rgba(229, 229, 229, 0.57)' }}>
                   {item.description}
                 </p>
                 
-                {/* Lista do time */}
                 {item.team && (
                   <ul className="space-y-1 mt-4">
                     {item.team.map((member, i) => (
-                      <li 
-                        key={i}
-                        className="font-ui text-sm"
-                        style={{ color: '#E6B281' }}
-                      >
+                      <li key={i} className="font-ui text-sm" style={{ color: '#E6B281' }}>
                         {member}
                       </li>
                     ))}
                   </ul>
                 )}
                 
-                {/* Highlight */}
                 {item.highlight && (
-                  <p 
-                    className="font-ui text-sm font-medium mt-4"
-                    style={{ color: '#E6B281' }}
-                  >
+                  <p className="font-ui text-sm font-medium mt-4" style={{ color: '#E6B281' }}>
                     {item.highlight}
                   </p>
                 )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

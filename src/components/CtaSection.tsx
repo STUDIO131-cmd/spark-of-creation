@@ -1,14 +1,7 @@
-import { motion } from "framer-motion";
-
 const CtaSection = () => {
   return (
     <section className="py-12 px-4 bg-black">
-      <motion.div
-        className="max-w-3xl mx-auto text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="max-w-3xl mx-auto text-center">
         <h2 
           className="font-ui text-2xl md:text-3xl font-normal leading-relaxed mb-8"
           style={{ color: '#E3E4E3' }}
@@ -17,13 +10,10 @@ const CtaSection = () => {
           <strong style={{ color: '#CF8B46' }}>20x ou mais</strong>.
         </h2>
 
-        <a
-          href="#orcamento"
-          className="inline-block btn-gold text-lg"
-        >
+        <a href="#orcamento" className="inline-block btn-gold text-lg">
           QUERO AVANÇAR
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 };

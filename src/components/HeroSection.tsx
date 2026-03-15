@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const HeroSection = () => {
   return (
     <section 
@@ -11,26 +9,16 @@ const HeroSection = () => {
         backgroundSize: 'cover'
       }}
     >
-      {/* Logo */}
-      <motion.img
+      <img
         src="https://www.studio131.com.br/wp-content/uploads/2026/01/PlanoProfissional-Aguia-02.png"
         alt="O Plano Profissional"
-        className="w-[68%] max-w-[400px] opacity-90"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 0.83, y: 0 }}
-        transition={{ duration: 0.8 }}
+        className="w-[68%] max-w-[400px] opacity-80"
       />
       
-      {/* Headline */}
-      <motion.h1
-        className="font-ui text-white text-center text-xl md:text-2xl font-normal leading-[1.3] max-w-3xl mt-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
+      <h1 className="font-ui text-white text-center text-xl md:text-2xl font-normal leading-[1.3] max-w-3xl mt-6">
         Fazemos seu conteúdo no <em>Instagram</em> <strong>(mas não é só isso)</strong> — O PLANO É UM MÉTODO. 
         Nós operamos a estratégia de comunicação enquanto o dono segue focado na operação do negócio.
-      </motion.h1>
+      </h1>
     </section>
   );
 };

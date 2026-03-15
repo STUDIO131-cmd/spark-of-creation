@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 const VideoSection = () => {
@@ -8,34 +7,15 @@ const VideoSection = () => {
   return (
     <section id="conteudo" className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto text-center">
-        {/* Título */}
-        <motion.h2
-          className="font-ui text-2xl md:text-3xl font-semibold mb-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
+        <h2 className="font-ui text-2xl md:text-3xl font-semibold mb-2">
           Entenda se estamos prontos para o próximo passo:
-        </motion.h2>
+        </h2>
         
-        <motion.p
-          className="font-ui text-lg text-gray-600 mb-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        <p className="font-ui text-lg text-gray-600 mb-8">
           2 min | Assista a este conteúdo
-        </motion.p>
+        </p>
 
-        {/* Vídeo / Thumbnail */}
-        <motion.div
-          className="relative rounded-xl overflow-hidden shadow-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
+        <div className="relative rounded-xl overflow-hidden shadow-2xl">
           {!isPlaying ? (
             <div 
               className="relative cursor-pointer group"
@@ -47,7 +27,6 @@ const VideoSection = () => {
                 className="w-full h-auto"
               />
               
-              {/* Overlay com play */}
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
                 <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Play size={36} className="text-black ml-1" fill="black" />
@@ -62,19 +41,11 @@ const VideoSection = () => {
               className="w-full h-auto"
             />
           )}
-        </motion.div>
+        </div>
 
-        {/* CTA */}
-        <motion.a
-          href="#orcamento"
-          className="inline-block btn-gold text-lg mt-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
+        <a href="#orcamento" className="inline-block btn-gold text-lg mt-8">
           QUERO AVANÇAR
-        </motion.a>
+        </a>
       </div>
     </section>
   );
