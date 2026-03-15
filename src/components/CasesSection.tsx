@@ -45,8 +45,8 @@ interface CaseCardProps {
 }
 
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
-  <div className="card-dark p-5 h-full">
-    {/* Imagem com aspect-ratio fixo 4:3 */}
+  <div className="card-dark p-5">
+    {/* Imagem - altura fixa via aspect-ratio */}
     <div className="mb-4 overflow-hidden rounded-lg aspect-[4/3]">
       <img
         src={image}
@@ -56,29 +56,35 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
       />
     </div>
 
-    {/* Conteúdo */}
-    <div>
-      <h3 
-        className="font-moneta font-semibold mb-2 text-2xl md:text-3xl"
-        style={{ color: '#F6FAFF' }}
-      >
-        {emoji} {name}
-      </h3>
-      
-      <p 
-        className="font-tiktok text-sm mb-3"
-        style={{ color: '#E6B281' }}
-      >
-        {area}
-      </p>
-      
-      <p 
-        className="font-tiktok text-sm leading-relaxed"
-        style={{ color: 'rgba(229, 229, 229, 0.57)' }}
-      >
-        {description}
-      </p>
-    </div>
+    {/* Nome - altura mínima para 2 linhas */}
+    <h3 
+      className="font-moneta font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px]"
+      style={{ color: '#F6FAFF' }}
+    >
+      {emoji} {name}
+    </h3>
+    
+    {/* Área - altura fixa para 1 linha */}
+    <p 
+      className="font-tiktok text-sm mb-3 min-h-[20px]"
+      style={{ color: '#E6B281' }}
+    >
+      {area}
+    </p>
+    
+    {/* Descrição - altura fixa + truncate */}
+    <p 
+      className="font-tiktok text-sm leading-relaxed min-h-[120px]"
+      style={{ 
+        color: 'rgba(229, 229, 229, 0.57)',
+        display: '-webkit-box',
+        WebkitLineClamp: 6,
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden'
+      }}
+    >
+      {description}
+    </p>
   </div>
 );
 
@@ -89,7 +95,7 @@ const CasesSection = () => {
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Row 1: 3 cards */}
+      {/* Row 1: 3 primeiros cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
         {cases.slice(0, 3).map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
