@@ -37,7 +37,7 @@ const VideoSection = () => {
             <video
               src="https://www.studio131.com.br/wp-content/uploads/2026/02/PP-VSL.mp4"
               controls
-              autoPlay style={{ objectFit: 'contain' }}
+              autoPlay
               className="w-full h-auto"
             />
           )}
