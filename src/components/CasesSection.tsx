@@ -89,18 +89,18 @@ const CasesSection = () => {
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Row 1: primeiros 4 cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto auto-rows-fr">
-        {cases.slice(0, 4).map((caseItem, index) => (
+      {/* Row 1: 3 cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+        {cases.slice(0, 3).map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
         ))}
       </div>
 
-      {/* Último card centralizado */}
-      <div className="flex justify-center mt-5 max-w-6xl mx-auto">
-        <div className="w-full sm:w-1/2 lg:w-1/3 px-0 sm:px-2.5">
-          <CaseCard {...cases[4]} />
-        </div>
+      {/* Row 2: 2 cards centralizados */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto lg:max-w-none lg:w-2/3">
+        {cases.slice(3, 5).map((caseItem, index) => (
+          <CaseCard key={index + 3} {...caseItem} />
+        ))}
       </div>
     </section>
   );
