@@ -7,7 +7,7 @@ const cases = [
   image: "https://www.studio131.com.br/wp-content/uploads/2026/02/4-1.png"
 },
 {
-  emoji: "✂️",
+  emoji: "🌱",
   name: "Henry Luchetti",
   area: "Médico Tricologista",
   description: "Case regional de sucesso em transplante capilar. Em pouco tempo, Henry tornou-se o nome mais lembrado e mais buscado quando alguém decide resolver a calvície de verdade.",
