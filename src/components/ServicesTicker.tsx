@@ -72,10 +72,7 @@ const services = [
 
 const ServicesTicker = () => {
   return (
-    <section 
-      className="py-5 overflow-hidden"
-      style={{ backgroundColor: '#350328' }}
-    >
+    <section className="py-5 overflow-hidden bg-ticker">
       <div className="flex animate-scroll-left">
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex shrink-0">
@@ -84,10 +81,10 @@ const ServicesTicker = () => {
                 key={index}
                 className="flex items-center gap-3 px-6 whitespace-nowrap"
               >
-                <span style={{ color: '#E6B281' }}>
+                <span className="text-card-accent">
                   {service.icon}
                 </span>
-                <span style={{ color: '#F6FAFF' }} className="font-tiktok text-base tracking-wider">
+                <span className="font-tiktok text-base tracking-wider text-card-title">
                   {service.name}
                 </span>
               </div>
