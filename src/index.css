@@ -233,5 +233,11 @@ All colors MUST be HSL.
 }
 
 .animate-scroll-left {
-  animation: scroll-left 12s linear infinite;
+  animation: scroll-left 7s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-scroll-left {
+    animation: scroll-left 12s linear infinite;
+  }
 }
