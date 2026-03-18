@@ -87,7 +87,7 @@ const ServicesTicker = () => {
                 <span style={{ color: '#E6B281' }}>
                   {service.icon}
                 </span>
-                <span style={{ color: '#F6FAFF' }} className="font-tiktok text-sm tracking-wider">
+                <span style={{ color: '#F6FAFF' }} className="font-tiktok text-base tracking-wider">
                   {service.name}
                 </span>
               </div>
