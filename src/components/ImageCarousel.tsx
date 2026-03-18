@@ -53,6 +53,7 @@ const ImageCarousel = () => {
               className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
+              decoding="async"
               width={300}
               height={250}
             />
@@ -64,6 +65,8 @@ const ImageCarousel = () => {
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
               className="w-full rounded-lg object-contain mx-auto"
+              loading="lazy"
+              decoding="async"
               width={500}
               height={400}
             />
@@ -77,6 +80,7 @@ const ImageCarousel = () => {
               className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
+              decoding="async"
               width={300}
               height={250}
             />

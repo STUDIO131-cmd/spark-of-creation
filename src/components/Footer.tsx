@@ -8,58 +8,41 @@ const Footer = () => {
   return (
     <footer className="py-12 px-4 bg-black">
       <div className="max-w-md mx-auto">
-        {/* Logo */}
         <div className="flex justify-center mb-10">
           <img
             src="https://www.studio131.com.br/wp-content/uploads/2026/01/PlanoProfissional-Aguia-02.png"
             alt="Studio 131"
             className="h-16 md:h-24 w-auto opacity-60"
             loading="lazy"
+            decoding="async"
             width={192}
             height={96}
           />
         </div>
 
-        {/* 2x2 Button Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
-          <a
-            href="https://welcome-back-craft.lovable.app"
-            className={btnClass}
-          >
+          <a href="https://welcome-back-craft.lovable.app" className={btnClass}>
             CAMPANHAS
           </a>
-
-          <a
-            href="https://redo-with-charm.lovable.app"
-            className={btnClass}
-          >
+          <a href="https://redo-with-charm.lovable.app" className={btnClass}>
             O PLANO PROFISSIONAL
           </a>
-
-          <a
-            href="#"
-            className={btnClass}
-          >
+          <a href="#" className={btnClass}>
             <span className="block">THE JOURNEY</span>
             <span className="block text-[10px] tracking-[0.15em] text-white/40 mt-0.5">FRENTE EDUCACIONAL</span>
           </a>
-
-          <button
-            onClick={scrollToTop}
-            className={btnClass}
-          >
+          <button onClick={scrollToTop} className={btnClass}>
             VOLTAR AO TOPO
           </button>
         </div>
 
-        {/* Copyright */}
         <div className="text-center">
-          <p className="font-tiktok text-sm mb-2" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+          <p className="font-tiktok text-sm mb-2 text-footer-muted">
             Copyright © 2026 Todos os direitos reservados.
           </p>
-          <p className="font-tiktok text-sm" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+          <p className="font-tiktok text-sm text-footer-muted">
             Oferecido com muita estratégia por:{" "}
-            <strong style={{ color: 'rgba(255, 255, 255, 0.7)' }}>STUDIO 131</strong>
+            <strong className="text-footer-strong">STUDIO 131</strong>
           </p>
         </div>
       </div>

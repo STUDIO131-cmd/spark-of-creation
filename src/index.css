@@ -209,6 +209,18 @@ All colors MUST be HSL.
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  /* Cores semânticas para cards escuros */
+  .text-card-title { color: #F6FAFF; }
+  .text-card-accent { color: #E6B281; }
+  .text-card-muted { color: rgba(229, 229, 229, 0.57); }
+  .text-card-body { color: #E3E4E3; }
+  .bg-ticker { background-color: #350328; }
+  .text-footer-muted { color: rgba(255, 255, 255, 0.5); }
+  .text-footer-strong { color: rgba(255, 255, 255, 0.7); }
+  .text-gold { color: #CF8B46; }
+  .border-gold { border-color: #CF8B46; }
+  .bg-gold { background-color: #CF8B46; }
   
   .btn-gold {
     background-color: #CF8B46;

@@ -46,37 +46,29 @@ interface CaseCardProps {
 
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
   <div className="card-dark p-5">
-    {/* Imagem - altura fixa via aspect-ratio */}
     <div className="mb-4 overflow-hidden rounded-lg aspect-[4/3]">
       <img
         src={image}
         alt={name}
         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         loading="lazy"
+        decoding="async"
+        width={600}
+        height={450}
       />
     </div>
 
-    {/* Nome - altura mínima para 2 linhas */}
-    <h3 
-      className="font-moneta font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px]"
-      style={{ color: '#F6FAFF' }}
-    >
+    <h3 className="font-moneta font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px] text-card-title">
       {emoji} {name}
     </h3>
     
-    {/* Área - altura fixa para 1 linha */}
-    <p 
-      className="font-tiktok text-sm mb-3 min-h-[20px]"
-      style={{ color: '#E6B281' }}
-    >
+    <p className="font-tiktok text-sm mb-3 min-h-[20px] text-card-accent">
       {area}
     </p>
     
-    {/* Descrição - altura fixa + truncate */}
     <p 
-      className="font-tiktok text-sm leading-relaxed min-h-[120px]"
+      className="font-tiktok text-sm leading-relaxed min-h-[120px] text-card-muted"
       style={{ 
-        color: 'rgba(229, 229, 229, 0.57)',
         display: '-webkit-box',
         WebkitLineClamp: 6,
         WebkitBoxOrient: 'vertical',
@@ -107,7 +99,7 @@ const CasesSection = () => {
         ))}
       </div>
 
-      {/* Tablet (md): Juliana|Henry, Giovana|Fernanda, Brenda centralizada */}
+      {/* Tablet (md): 2x2 + 1 centralizada */}
       <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 max-w-4xl mx-auto">
         <CaseCard {...cases[0]} />
         <CaseCard {...cases[1]} />
