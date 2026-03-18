@@ -95,17 +95,35 @@ const CasesSection = () => {
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Row 1: 3 primeiros cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      {/* Desktop (lg+): 3 + 2 centralizado */}
+      <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
         {cases.slice(0, 3).map((caseItem, index) => (
           <CaseCard key={index} {...caseItem} />
         ))}
       </div>
-
-      {/* Row 2: 2 cards centralizados */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto lg:max-w-none lg:w-2/3">
+      <div className="hidden lg:grid grid-cols-2 gap-5 mt-5 max-w-none w-2/3 mx-auto">
         {cases.slice(3, 5).map((caseItem, index) => (
           <CaseCard key={index + 3} {...caseItem} />
+        ))}
+      </div>
+
+      {/* Tablet (md): Juliana|Henry, Giovana|Fernanda, Brenda centralizada */}
+      <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <CaseCard {...cases[0]} />
+        <CaseCard {...cases[1]} />
+        <CaseCard {...cases[2]} />
+        <CaseCard {...cases[4]} />
+      </div>
+      <div className="hidden md:flex lg:hidden justify-center mt-5 max-w-4xl mx-auto">
+        <div className="w-1/2">
+          <CaseCard {...cases[3]} />
+        </div>
+      </div>
+
+      {/* Mobile: coluna única */}
+      <div className="grid md:hidden grid-cols-1 gap-5 max-w-6xl mx-auto">
+        {cases.map((caseItem, index) => (
+          <CaseCard key={index} {...caseItem} />
         ))}
       </div>
     </section>
