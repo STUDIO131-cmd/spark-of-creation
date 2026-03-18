@@ -80,6 +80,7 @@ const ImageCarousel = () => {
               className="w-full rounded-lg object-contain"
               style={{ filter: 'blur(2px)' }}
               loading="lazy"
+              decoding="async"
               width={300}
               height={250}
             />
