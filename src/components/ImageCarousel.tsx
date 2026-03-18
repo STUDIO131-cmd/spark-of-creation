@@ -64,6 +64,8 @@ const ImageCarousel = () => {
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
               className="w-full rounded-lg object-contain mx-auto"
+              loading="lazy"
+              decoding="async"
               width={500}
               height={400}
             />

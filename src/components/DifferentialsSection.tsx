@@ -43,6 +43,7 @@ const DifferentialsSection = () => {
                 alt={item.title}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
                 width={600}
                 height={338} />
               

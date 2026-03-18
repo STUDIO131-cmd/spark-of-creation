@@ -27,10 +27,12 @@ para o próximo passo:
                 <div
                   className="relative cursor-pointer group w-full h-full"
                   onClick={() => setIsPlaying(true)}>
-                  <img
+                    <img
                     src="https://www.studio131.com.br/wp-content/uploads/2026/02/Capas-4.jpg"
                     alt="Vídeo O Plano Profissional"
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                     width={320}
                     height={569} />
                 </div>

@@ -15,6 +15,7 @@ const Footer = () => {
             alt="Studio 131"
             className="h-16 md:h-24 w-auto opacity-60"
             loading="lazy"
+            decoding="async"
             width={192}
             height={96}
           />

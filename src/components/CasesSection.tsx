@@ -53,6 +53,9 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
         alt={name}
         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         loading="lazy"
+        decoding="async"
+        width={600}
+        height={450}
       />
     </div>
 
