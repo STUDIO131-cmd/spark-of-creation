@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoSrc = "/videos/PP-2.mp4";
 
   return (
     <section id="conteudo" className="py-12 px-4 bg-studio-dark">
@@ -24,23 +25,25 @@ const VideoSection = () => {
           <div className="w-full max-w-[320px] md:max-w-[360px]">
             <div className="relative aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl" style={{ backgroundColor: 'hsl(0 0% 17%)' }}>
               {!isPlaying ? (
-                <div
-                  className="relative cursor-pointer group w-full h-full"
+                <button
+                  type="button"
+                  className="relative group w-full h-full overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-card-accent focus-visible:ring-offset-2 focus-visible:ring-offset-studio-dark"
                   onClick={() => setIsPlaying(true)}
+                  aria-label="Reproduzir vídeo Clique e analise"
                 >
-                  {/* Video as cover (paused, muted) */}
                   <video
-                    src="/videos/Campanhas.mp4"
-                    className="w-full h-full object-cover"
+                    src={videoSrc}
+                    className="w-full h-full object-cover scale-[1.02]"
                     muted
                     playsInline
+                    autoPlay
+                    loop
                     preload="metadata"
                   />
 
-                  {/* Blur overlay */}
-                  <div className="absolute inset-0 backdrop-blur-sm bg-black/30 transition-all duration-300 group-hover:backdrop-blur-[2px] group-hover:bg-black/20" />
+                  <div className="absolute inset-0 bg-white/10 backdrop-blur-[6px] transition-all duration-300 group-hover:bg-white/5 group-hover:backdrop-blur-[3px]" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/20" />
 
-                  {/* Play button */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none">
@@ -51,12 +54,13 @@ const VideoSection = () => {
                       Clique e analise
                     </span>
                   </div>
-                </div>
+                </button>
               ) : (
                 <video
-                  src="/videos/Campanhas.mp4"
+                  src={videoSrc}
                   controls
                   autoPlay
+                  playsInline
                   className="w-full h-full"
                   style={{ objectFit: 'contain' }}
                 />
