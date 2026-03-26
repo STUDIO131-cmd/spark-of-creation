@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/1.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/2.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/3.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/4.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/5.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/6.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/7.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/8.png",
-  "https://www.studio131.com.br/wp-content/uploads/2026/02/9.png",
+  "/images/carousel/1.png",
+  "/images/carousel/2.png",
+  "/images/carousel/3.png",
+  "/images/carousel/4.png",
+  "/images/carousel/5.png",
+  "/images/carousel/6.png",
+  "/images/carousel/7.png",
+  "/images/carousel/8.png",
+  "/images/carousel/9.png",
 ];
 
 const ImageCarousel = () => {
