@@ -3,7 +3,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const btnClass = "block w-full px-6 py-4 border border-white/20 rounded-xl text-white font-tiktok font-medium text-sm tracking-wider hover:bg-white/5 transition-colors text-center";
+  const btnClass = "flex items-center justify-center w-full px-6 py-4 border border-white/20 rounded-xl text-white font-tiktok font-medium text-sm tracking-wider hover:bg-white/5 transition-colors text-center";
 
   return (
     <footer className="py-12 px-4 bg-black">
