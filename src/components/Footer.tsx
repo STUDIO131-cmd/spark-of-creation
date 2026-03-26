@@ -3,7 +3,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const btnClass = "flex items-center justify-center w-full px-6 py-4 border rounded-xl text-white font-tiktok font-medium text-sm tracking-wider transition-all duration-300 text-center min-h-[44px] border-white/20 hover:bg-white/5 hover:-translate-y-0.5";
+  const btnClass = "flex items-center justify-center w-full px-6 py-4 border rounded-xl font-tiktok font-medium text-sm tracking-wider transition-all duration-300 text-center min-h-[44px] border-gold/30 bg-gold/5 text-gold/80 hover:bg-gold/10 hover:text-gold hover:-translate-y-0.5";
 
   return (
     <footer className="py-12 px-4 bg-studio-dark">
@@ -20,21 +20,29 @@ const Footer = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
-          <a href="https://welcome-back-craft.lovable.app" className={btnClass}>
-            CAMPANHAS
-          </a>
-          <a href="https://redo-with-charm.lovable.app" className={btnClass}>
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <a href="#" className={btnClass}>
             <span className="flex items-center justify-center gap-2">
               131 FOTOS
               <span className="px-1.5 py-0.5 text-[9px] font-bold tracking-wider uppercase rounded bg-card-accent/20 text-card-accent border border-card-accent/30 leading-none">EM BREVE</span>
             </span>
           </a>
-          <a href="#" className={btnClass}>
-            <span className="block">THE JOURNEY</span>
-            <span className="block text-[10px] tracking-[0.15em] text-white/40 mt-0.5">FRENTE EDUCACIONAL</span>
+          <a href="https://campanhas.studio131.com.br" className={btnClass}>
+            CAMPANHAS
           </a>
-          <button onClick={scrollToTop} className={btnClass}>
+          <a href="https://planoprofissional.studio131.com.br" className={btnClass}>
+            O PLANO PROFISSIONAL
+          </a>
+          <a href="https://ajornadaimersao.studio131.com.br/" className={btnClass}>
+            <span className="flex flex-col items-center">
+              <span>THE JOURNEY</span>
+              <span className="text-[10px] tracking-[0.15em] text-gold/40 mt-0.5">FRENTE EDUCACIONAL</span>
+            </span>
+          </a>
+        </div>
+
+        <div className="mb-10">
+          <button onClick={scrollToTop} className={`${btnClass} w-full`}>
             VOLTAR AO TOPO
           </button>
         </div>
