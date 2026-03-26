@@ -11,7 +11,7 @@ const HeroSection = () => {
     >
       {/* Logo */}
       <img
-        src="https://www.studio131.com.br/wp-content/uploads/2026/01/PlanoProfissional-Aguia-02.png"
+        src="/images/PlanoProfissional-Aguia-02.png"
         alt="O Plano Profissional"
         className="h-20 md:h-36 lg:h-44 w-auto opacity-80"
         loading="eager"
