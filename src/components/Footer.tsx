@@ -20,6 +20,12 @@ const Footer = () => {
           />
         </div>
 
+        <div className="mb-3">
+          <a href="https://sobre.studio131.com.br" className={btnClass}>
+            CONHEÇA A AGÊNCIA STUDIO 131
+          </a>
+        </div>
+
         <div className="grid grid-cols-2 gap-3 mb-3">
           <a href="#" className={btnClass}>
             <span className="flex items-center justify-center gap-2">
