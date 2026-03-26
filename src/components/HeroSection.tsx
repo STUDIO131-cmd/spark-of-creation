@@ -13,7 +13,7 @@ const HeroSection = () => {
       <img
         src="/images/PlanoProfissional-Aguia-02.png"
         alt="O Plano Profissional"
-        className="h-20 md:h-36 lg:h-44 w-auto opacity-80"
+        className="h-20 md:h-36 lg:h-44 w-auto opacity-80 drop-shadow-[0_0_25px_rgba(230,178,129,0.4)]"
         loading="eager"
         fetchPriority="high"
         decoding="async"
