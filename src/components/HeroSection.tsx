@@ -4,7 +4,7 @@ const HeroSection = () => {
       className="relative min-h-[420px] md:min-h-[333px] flex flex-col items-center justify-center py-10 md:py-14 px-4"
       style={{
         backgroundColor: '#F59E05',
-        backgroundImage: 'url(https://www.studio131.com.br/wp-content/uploads/2026/02/Header.png)',
+        backgroundImage: 'url(/images/Header.png)',
         backgroundPosition: 'top center',
         backgroundSize: 'cover'
       }}
