@@ -25,7 +25,7 @@ const Footer = () => {
             CAMPANHAS
           </a>
           <a href="https://redo-with-charm.lovable.app" className={btnClass}>
-            O PLANO PROFISSIONAL
+            131 FOTOS
           </a>
           <a href="#" className={btnClass}>
             <span className="block">THE JOURNEY</span>
