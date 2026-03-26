@@ -1,3 +1,7 @@
+import OptimizedImage from './OptimizedImage';
+import CardSkeleton from './CardSkeleton';
+import { useInView } from '@/hooks/useInView';
+
 const cases = [
   {
     emoji: "💉",
@@ -47,12 +51,10 @@ interface CaseCardProps {
 const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
   <div className="card-dark p-5">
     <div className="mb-4 overflow-hidden rounded-lg aspect-[4/3]">
-      <img
+      <OptimizedImage
         src={image}
         alt={name}
         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-        loading="lazy"
-        decoding="async"
         width={600}
         height={450}
       />
@@ -81,43 +83,55 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
 );
 
 const CasesSection = () => {
+  const { ref, isInView } = useInView();
+
   return (
-    <section className="bg-white py-8 px-4 md:px-8">
+    <section ref={ref} className="bg-white py-8 px-4 md:px-8">
       <h2 className="font-tiktok text-center text-2xl md:text-3xl font-semibold py-8">
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 
-      {/* Desktop (lg+): 3 + 2 centralizado */}
-      <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
-        {cases.slice(0, 3).map((caseItem, index) => (
-          <CaseCard key={index} {...caseItem} />
-        ))}
-      </div>
-      <div className="hidden lg:grid grid-cols-2 gap-5 mt-5 max-w-none w-2/3 mx-auto">
-        {cases.slice(3, 5).map((caseItem, index) => (
-          <CaseCard key={index + 3} {...caseItem} />
-        ))}
-      </div>
+      {isInView ? (
+        <>
+          {/* Desktop (lg+): 3 + 2 centralizado */}
+          <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {cases.slice(0, 3).map((caseItem, index) => (
+              <CaseCard key={index} {...caseItem} />
+            ))}
+          </div>
+          <div className="hidden lg:grid grid-cols-2 gap-5 mt-5 max-w-none w-2/3 mx-auto">
+            {cases.slice(3, 5).map((caseItem, index) => (
+              <CaseCard key={index + 3} {...caseItem} />
+            ))}
+          </div>
 
-      {/* Tablet (md): 2x2 + 1 centralizada */}
-      <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 max-w-4xl mx-auto">
-        <CaseCard {...cases[0]} />
-        <CaseCard {...cases[1]} />
-        <CaseCard {...cases[2]} />
-        <CaseCard {...cases[4]} />
-      </div>
-      <div className="hidden md:flex lg:hidden justify-center mt-5 max-w-4xl mx-auto">
-        <div className="w-1/2">
-          <CaseCard {...cases[3]} />
+          {/* Tablet (md): 2x2 + 1 centralizada */}
+          <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <CaseCard {...cases[0]} />
+            <CaseCard {...cases[1]} />
+            <CaseCard {...cases[2]} />
+            <CaseCard {...cases[4]} />
+          </div>
+          <div className="hidden md:flex lg:hidden justify-center mt-5 max-w-4xl mx-auto">
+            <div className="w-1/2">
+              <CaseCard {...cases[3]} />
+            </div>
+          </div>
+
+          {/* Mobile: coluna única */}
+          <div className="grid md:hidden grid-cols-1 gap-5 max-w-6xl mx-auto">
+            {cases.map((caseItem, index) => (
+              <CaseCard key={index} {...caseItem} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {Array(3).fill(0).map((_, i) => (
+            <CardSkeleton key={i} />
+          ))}
         </div>
-      </div>
-
-      {/* Mobile: coluna única */}
-      <div className="grid md:hidden grid-cols-1 gap-5 max-w-6xl mx-auto">
-        {cases.map((caseItem, index) => (
-          <CaseCard key={index} {...caseItem} />
-        ))}
-      </div>
+      )}
     </section>
   );
 };
