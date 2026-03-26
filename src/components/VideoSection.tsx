@@ -26,20 +26,35 @@ const VideoSection = () => {
               {!isPlaying ? (
                 <div
                   className="relative cursor-pointer group w-full h-full"
-                  onClick={() => setIsPlaying(true)}>
-                  <img
-                    src="https://www.studio131.com.br/wp-content/uploads/2026/02/Capas-4.jpg"
-                    alt="Vídeo O Plano Profissional"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                    width={320}
-                    height={569}
+                  onClick={() => setIsPlaying(true)}
+                >
+                  {/* Video as cover (paused, muted) */}
+                  <video
+                    src="/videos/Campanhas.mp4"
+                    className="w-full h-full object-cover"
+                    muted
+                    playsInline
+                    preload="metadata"
                   />
+
+                  {/* Blur overlay */}
+                  <div className="absolute inset-0 backdrop-blur-sm bg-black/30 transition-all duration-300 group-hover:backdrop-blur-[2px] group-hover:bg-black/20" />
+
+                  {/* Play button */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none">
+                        <polygon points="6 3 20 12 6 21" />
+                      </svg>
+                    </div>
+                    <span className="font-tiktok text-white text-sm font-medium tracking-wider uppercase opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      Clique e analise
+                    </span>
+                  </div>
                 </div>
               ) : (
                 <video
-                  src="https://www.studio131.com.br/wp-content/uploads/2026/02/PP-VSL.mp4"
+                  src="/videos/Campanhas.mp4"
                   controls
                   autoPlay
                   className="w-full h-full"
