@@ -3,7 +3,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const btnClass = "flex items-center justify-center w-full px-6 py-4 border rounded-xl font-tiktok font-medium text-sm tracking-wider transition-all duration-300 text-center min-h-[44px] border-gold/30 bg-gold/5 text-gold/80 hover:bg-gold/10 hover:text-gold hover:-translate-y-0.5";
+  const btnClass = "flex items-center justify-center w-full px-6 py-4 border rounded-xl font-tiktok font-medium text-sm tracking-wider transition-all duration-300 text-center min-h-[44px] border-white/15 bg-white/5 backdrop-blur-md text-white/90 hover:bg-primary/20 hover:border-primary/40 hover:text-primary hover:-translate-y-0.5";
 
   return (
     <footer className="py-12 px-4 bg-studio-dark">
