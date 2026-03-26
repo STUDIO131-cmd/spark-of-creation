@@ -22,7 +22,7 @@ const cases = [
     name: "Giovana Assad",
     area: "Médica Ortopedista",
     description: "9 anos de medicina + estudo constante. Com fellowship em dor, a Giovana trouxe tratamentos ortobiológicos para a prática e virou referência: clínica em evidência, mais confiança nas decisões e uma agenda que cresce no particular.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/2-2.png"
+    image: "/images/cases/2-2.png"
   },
   {
     emoji: "🦶",
