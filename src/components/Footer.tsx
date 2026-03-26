@@ -30,19 +30,13 @@ const Footer = () => {
           <a href="https://campanhas.studio131.com.br" className={btnClass}>
             CAMPANHAS
           </a>
-          <a href="https://planoprofissional.studio131.com.br" className={btnClass}>
-            O PLANO PROFISSIONAL
-          </a>
           <a href="https://ajornadaimersao.studio131.com.br/" className={btnClass}>
             <span className="flex flex-col items-center">
               <span>THE JOURNEY</span>
-              <span className="text-[10px] tracking-[0.15em] text-gold/40 mt-0.5">FRENTE EDUCACIONAL</span>
+              <span className="text-[10px] tracking-[0.15em] text-white/30 mt-0.5">FRENTE EDUCACIONAL</span>
             </span>
           </a>
-        </div>
-
-        <div className="mb-10">
-          <button onClick={scrollToTop} className={`${btnClass} w-full`}>
+          <button onClick={scrollToTop} className={btnClass}>
             VOLTAR AO TOPO
           </button>
         </div>
