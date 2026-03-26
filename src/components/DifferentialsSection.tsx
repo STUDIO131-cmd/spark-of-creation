@@ -48,7 +48,7 @@ const DifferentialsSection = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="py-12 px-4 bg-white">
+    <section ref={ref} className="py-12 px-4 bg-studio-cream">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {isInView ? (
@@ -65,7 +65,7 @@ const DifferentialsSection = () => {
                 </div>
                 
                 <div className="p-5">
-                  <h3 className="font-moneta font-medium mb-3 text-2xl font-sans text-card-title">
+                  <h3 className="font-tiktok font-medium mb-3 text-2xl text-card-title">
                     {item.title}
                   </h3>
                   

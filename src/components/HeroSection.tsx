@@ -3,7 +3,7 @@ const HeroSection = () => {
     <section 
       className="relative min-h-[420px] md:min-h-[333px] flex flex-col items-center justify-center py-10 md:py-14 px-4"
       style={{
-        backgroundColor: '#F59E05',
+        backgroundColor: '#d15e4a',
         backgroundImage: 'url(/images/Header.png)',
         backgroundPosition: 'top center',
         backgroundSize: 'cover'
@@ -13,7 +13,7 @@ const HeroSection = () => {
       <img
         src="/images/PlanoProfissional-Aguia-02.png"
         alt="O Plano Profissional"
-        className="h-20 md:h-36 lg:h-44 w-auto opacity-80 drop-shadow-[0_0_25px_rgba(230,178,129,0.4)]"
+        className="h-20 md:h-36 lg:h-44 w-auto opacity-80 drop-shadow-[0_0_25px_rgba(216,126,95,0.4)]"
         loading="eager"
         fetchPriority="high"
         decoding="async"

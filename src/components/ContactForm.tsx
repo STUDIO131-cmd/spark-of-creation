@@ -36,19 +36,20 @@ const ContactForm = () => {
     setSubmitted(true);
   };
 
-  const inputClass = "w-full px-4 py-3 rounded-lg border border-gray-300 font-tiktok text-base focus:outline-none focus:ring-2 focus:ring-amber-500";
-  const labelClass = "block font-tiktok text-sm font-medium text-gray-700 mb-2";
-  const radioLabelClass = "flex items-center gap-3 cursor-pointer";
+  const inputClass = "w-full px-4 py-3 rounded-lg border font-tiktok text-base focus:outline-none focus:ring-2 transition-all duration-300 min-h-[44px]" +
+    " border-[hsl(0_0%_81%)] focus:ring-[hsl(16_62%_61%)] bg-white text-[hsl(0_0%_17%)]";
+  const labelClass = "block font-tiktok text-sm font-medium mb-2 text-[hsl(0_0%_32%)]";
+  const radioLabelClass = "flex items-center gap-3 cursor-pointer min-h-[44px]";
 
   if (submitted) {
     return (
-      <section id="orcamento" className="py-12 px-4 bg-gray-50">
+      <section id="orcamento" className="py-12 px-4 bg-studio-neutral">
         <div className="max-w-2xl mx-auto text-center">
           <div className="bg-white rounded-2xl shadow-lg p-12">
-            <h2 className="font-tiktok text-2xl font-semibold mb-4" style={{ color: '#CF8B46' }}>
+            <h2 className="font-tiktok text-2xl font-semibold mb-4 text-[hsl(16_62%_61%)]">
               Formulário enviado com sucesso!
             </h2>
-            <p className="font-tiktok text-base text-gray-600">
+            <p className="font-tiktok text-base text-[hsl(0_0%_54%)]">
               Em breve entraremos em contato pelo WhatsApp informado.
             </p>
           </div>
@@ -58,13 +59,13 @@ const ContactForm = () => {
   }
 
   return (
-    <section id="orcamento" className="py-12 px-4 bg-gray-50">
+    <section id="orcamento" className="py-12 px-4 bg-studio-neutral">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-tiktok text-2xl md:text-3xl font-semibold mb-4">
+          <h2 className="font-tiktok text-2xl md:text-3xl font-semibold mb-4 text-[hsl(0_0%_17%)]">
             Preencha o formulário de contato
           </h2>
-          <p className="font-tiktok text-base text-gray-600 leading-relaxed">
+          <p className="font-tiktok text-base leading-relaxed text-[hsl(0_0%_54%)]">
             Ao preencher o formulário, você se candidata a uma vaga no Plano Profissional.
             Mantemos um limite de clientes ativos para preservar o padrão de entrega.
           </p>
@@ -92,8 +93,8 @@ const ContactForm = () => {
             <div className="space-y-2">
               {["Sim", "Não"].map((option) => (
                 <label key={option} className={radioLabelClass}>
-                  <input type="radio" name="areaCorreta" value={option} required className="w-4 h-4" checked={formData.areaCorreta === option} onChange={handleChange} />
-                  <span className="font-tiktok text-base text-gray-700">{option}</span>
+                  <input type="radio" name="areaCorreta" value={option} required className="w-5 h-5 accent-[hsl(16,62%,61%)]" checked={formData.areaCorreta === option} onChange={handleChange} />
+                  <span className="font-tiktok text-base text-[hsl(0_0%_32%)]">{option}</span>
                 </label>
               ))}
             </div>
@@ -109,8 +110,8 @@ const ContactForm = () => {
             <div className="space-y-2">
               {["Sim, secretária", "Sim, vendedor dedicado", "Não tenho"].map((option) => (
                 <label key={option} className={radioLabelClass}>
-                  <input type="radio" name="timeComercial" value={option} required className="w-4 h-4" checked={formData.timeComercial === option} onChange={handleChange} />
-                  <span className="font-tiktok text-base text-gray-700">{option}</span>
+                  <input type="radio" name="timeComercial" value={option} required className="w-5 h-5 accent-[hsl(16,62%,61%)]" checked={formData.timeComercial === option} onChange={handleChange} />
+                  <span className="font-tiktok text-base text-[hsl(0_0%_32%)]">{option}</span>
                 </label>
               ))}
             </div>
@@ -121,8 +122,8 @@ const ContactForm = () => {
             <div className="space-y-2">
               {["Abaixo de 30k", "Entre 30k - 60k", "60k - 100k", "Acima de 100k"].map((option) => (
                 <label key={option} className={radioLabelClass}>
-                  <input type="radio" name="faturamento" value={option} required className="w-4 h-4" checked={formData.faturamento === option} onChange={handleChange} />
-                  <span className="font-tiktok text-base text-gray-700">{option}</span>
+                  <input type="radio" name="faturamento" value={option} required className="w-5 h-5 accent-[hsl(16,62%,61%)]" checked={formData.faturamento === option} onChange={handleChange} />
+                  <span className="font-tiktok text-base text-[hsl(0_0%_32%)]">{option}</span>
                 </label>
               ))}
             </div>
@@ -133,18 +134,18 @@ const ContactForm = () => {
             <div className="space-y-2">
               {["Preciso de um movimento imediato", "Posso aguardar", "Ainda estou avaliando"].map((option) => (
                 <label key={option} className={radioLabelClass}>
-                  <input type="radio" name="urgencia" value={option} required className="w-4 h-4" checked={formData.urgencia === option} onChange={handleChange} />
-                  <span className="font-tiktok text-base text-gray-700">{option}</span>
+                  <input type="radio" name="urgencia" value={option} required className="w-5 h-5 accent-[hsl(16,62%,61%)]" checked={formData.urgencia === option} onChange={handleChange} />
+                  <span className="font-tiktok text-base text-[hsl(0_0%_32%)]">{option}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <p className="font-tiktok text-sm text-gray-500 text-center">
+          <p className="font-tiktok text-sm text-center text-[hsl(0_0%_54%)]">
             Limitamos a 10 clientes ativos para manter excelência.
           </p>
 
-          <button type="submit" className="w-full btn-gold text-lg py-4 font-tiktok">
+          <button type="submit" className="w-full btn-gold text-lg py-4 font-tiktok min-h-[44px]">
             Enviar
           </button>
         </form>
