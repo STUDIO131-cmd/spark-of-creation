@@ -2,95 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   DESIGN SYSTEM — STUDIO 131
+   Paleta oficial. Todas as cores em HSL.
+   ============================================ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Studio 131 — Creme principal como background */
+    --background: 36 50% 89%;        /* #efe7da */
+    --foreground: 0 0% 17%;          /* #2b2b2b */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 17%;               /* #2b2b2b */
+    --card-foreground: 36 50% 89%;   /* #efe7da */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 36 50% 89%;
+    --popover-foreground: 0 0% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary = Tom quente principal */
+    --primary: 16 62% 61%;           /* #d87e5f */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary = Vinho */
+    --secondary: 330 60% 15%;        /* #3c0e29 */
+    --secondary-foreground: 36 50% 89%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 92%;              /* #eaeaea */
+    --muted-foreground: 0 0% 32%;   /* #515151 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent = Tom quente */
+    --accent: 16 62% 61%;           /* #d87e5f */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 5 64% 49%;       /* #c73c32 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 81%;             /* #cfcece */
+    --input: 0 0% 81%;              /* #cfcece */
+    --ring: 16 62% 61%;             /* #d87e5f */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Studio 131 semantic tokens */
+    --studio-warm: 16 62% 61%;       /* #d87e5f */
+    --studio-warm-hover: 5 64% 49%;  /* #c73c32 */
+    --studio-wine: 330 60% 15%;      /* #3c0e29 */
+    --studio-dark: 0 0% 17%;         /* #2b2b2b */
+    --studio-cream: 36 50% 89%;      /* #efe7da */
+    --studio-neutral: 0 0% 92%;      /* #eaeaea */
+    --studio-neutral-mid: 0 0% 81%;  /* #cfcece */
+    --studio-neutral-dark: 0 0% 54%; /* #888989 */
+    --studio-neutral-deep: 0 0% 32%; /* #515151 */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 17%;
+    --sidebar-foreground: 36 50% 89%;
+    --sidebar-primary: 16 62% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 330 60% 15%;
+    --sidebar-accent-foreground: 36 50% 89%;
+    --sidebar-border: 0 0% 81%;
+    --sidebar-ring: 16 62% 61%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --background: 0 0% 17%;
+    --foreground: 36 50% 89%;
+    --card: 0 0% 12%;
+    --card-foreground: 36 50% 89%;
+    --popover: 0 0% 17%;
+    --popover-foreground: 36 50% 89%;
+    --primary: 16 62% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 60% 15%;
+    --secondary-foreground: 36 50% 89%;
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 54%;
+    --accent: 16 62% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 5 64% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 16 62% 61%;
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 36 50% 89%;
+    --sidebar-primary: 16 62% 61%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 36 50% 89%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 16 62% 61%;
   }
 }
 
@@ -101,67 +102,29 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Safe areas for iOS/Android */
+  @supports (padding: env(safe-area-inset-top)) {
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
   }
 }
 
 /* ============================================
-   FONTES OFICIAIS STUDIO 131
+   TIPOGRAFIA — TikTok Sans (Única)
    ============================================ */
 
-/* NT EPIKA — Display (Títulos elegantes) */
-@font-face {
-  font-family: 'NT Epika';
-  src: url('/fonts/epika-thin.otf') format('opentype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'NT Epika';
-  src: url('/fonts/epika-regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'NT Epika';
-  src: url('/fonts/epika-medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'NT Epika';
-  src: url('/fonts/epika-bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* MONETA — Body (Textos amigáveis) */
-@font-face {
-  font-family: 'Moneta';
-  src: url('/fonts/moneta-light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Moneta';
-  src: url('/fonts/moneta-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Moneta';
-  src: url('/fonts/moneta-bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* TIKTOK SANS — UI (Interface moderna) */
 @font-face {
   font-family: 'TikTok Sans';
   src: url('/fonts/tiktok-regular.ttf') format('truetype');
@@ -191,54 +154,68 @@ All colors MUST be HSL.
   font-display: swap;
 }
 
+/* ============================================
+   COMPONENT LAYER — Studio 131 Design System
+   ============================================ */
+
 @layer components {
-  .font-display, .font-epika {
-    font-family: 'NT Epika', 'Cormorant Garamond', serif;
-  }
-  
-  .font-body, .font-moneta {
-    font-family: 'Moneta', 'DM Sans', sans-serif;
-  }
-  
-  .font-ui, .font-tiktok {
+  /* Typography — all unified to TikTok Sans */
+  .font-display, .font-epika, .font-body, .font-moneta, .font-ui, .font-tiktok {
     font-family: 'TikTok Sans', 'Inter', sans-serif;
   }
   
+  /* Card Dark — Preto Técnico */
   .card-dark {
-    background-color: #000602;
+    background-color: hsl(0 0% 17%);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Cores semânticas para cards escuros */
-  .text-card-title { color: #F6FAFF; }
-  .text-card-accent { color: #E6B281; }
-  .text-card-muted { color: rgba(229, 229, 229, 0.57); }
-  .text-card-body { color: #E3E4E3; }
-  .bg-ticker { background-color: #350328; }
+  .card-dark:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Semantic text colors */
+  .text-card-title { color: hsl(36 50% 89%); }       /* #efe7da creme */
+  .text-card-accent { color: hsl(16 62% 61%); }       /* #d87e5f warm */
+  .text-card-muted { color: hsla(0, 0%, 92%, 0.57); } /* #eaeaea muted */
+  .text-card-body { color: hsl(0 0% 92%); }           /* #eaeaea */
   .text-footer-muted { color: rgba(255, 255, 255, 0.5); }
   .text-footer-strong { color: rgba(255, 255, 255, 0.7); }
-  .text-gold { color: #CF8B46; }
-  .border-gold { border-color: #CF8B46; }
-  .bg-gold { background-color: #CF8B46; }
+
+  /* Background tokens */
+  .bg-ticker { background-color: hsl(330 60% 15%); }  /* #3c0e29 vinho */
+  .bg-studio-dark { background-color: hsl(0 0% 17%); } /* #2b2b2b */
+  .bg-studio-cream { background-color: hsl(36 50% 89%); } /* #efe7da */
+  .bg-studio-neutral { background-color: hsl(0 0% 92%); } /* #eaeaea */
+
+  /* Gold/Warm accent classes */
+  .text-gold { color: hsl(16 62% 61%); }              /* #d87e5f */
+  .border-gold { border-color: hsl(16 62% 61%); }
+  .bg-gold { background-color: hsl(16 62% 61%); }
   
+  /* Button Gold — Premium */
   .btn-gold {
-    background-color: #CF8B46;
+    background-color: hsl(16 62% 61%);
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'TikTok Sans', 'Inter', sans-serif;
     font-weight: 500;
     padding: 12px 24px;
     border-radius: 10px;
     transition: all 0.3s ease;
+    min-height: 44px;
   }
   
   .btn-gold:hover {
-    background-color: #B87A3D;
+    background-color: hsl(5 64% 49%);  /* #c73c32 */
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px hsla(16, 62%, 61%, 0.4);
   }
 }
 
-/* Animação do ticker */
+/* Ticker animation */
 @keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

@@ -2,7 +2,7 @@ import { Clock } from "lucide-react";
 
 const ValueProposition = () => {
   return (
-    <section className="py-6 px-4 bg-black">
+    <section className="py-6 px-4 bg-studio-dark">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="font-tiktok text-xl md:text-2xl font-normal leading-[1.3] mb-6 text-card-body">
           <span>Com método e ticket saudável, marketing deixa de ser
@@ -13,7 +13,7 @@ const ValueProposition = () => {
           <strong>com nossos clientes.</strong>
         </h2>
 
-        <a href="#conteudo" className="inline-flex items-center gap-3 btn-gold text-lg font-tiktok">
+        <a href="#conteudo" className="inline-flex items-center gap-3 btn-gold text-lg font-tiktok min-h-[44px]">
           <Clock size={20} />
           <span>Vídeo 2 min | Entenda o Plano na Prática</span>
         </a>

@@ -1,6 +1,6 @@
 const CtaSection = () => {
   return (
-    <section className="py-12 px-4 bg-black">
+    <section className="py-12 px-4 bg-studio-dark">
       <div className="max-w-3xl mx-auto text-center">
         <p className="font-tiktok text-base md:text-xl font-normal mb-4 tracking-wide text-card-body">
           Nossa régua é simples:
@@ -13,7 +13,7 @@ const CtaSection = () => {
 
         <a 
           href="#orcamento" 
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-tiktok font-medium text-base md:text-lg transition-all hover:-translate-y-0.5 border border-gold text-gold hover:bg-gold hover:text-white"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-tiktok font-medium text-base md:text-lg transition-all duration-300 hover:-translate-y-0.5 border border-gold text-gold hover:bg-gold hover:text-white min-h-[44px]"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <polyline points="9 18 15 12 9 6" />

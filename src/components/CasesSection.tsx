@@ -60,7 +60,7 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
       />
     </div>
 
-    <h3 className="font-moneta font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px] text-card-title">
+    <h3 className="font-tiktok font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px] text-card-title">
       {emoji} {name}
     </h3>
     
@@ -86,8 +86,8 @@ const CasesSection = () => {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="bg-white py-8 px-4 md:px-8">
-      <h2 className="font-tiktok text-center text-2xl md:text-3xl font-semibold py-8">
+    <section ref={ref} className="bg-studio-cream py-8 px-4 md:px-8">
+      <h2 className="font-tiktok text-center text-2xl md:text-3xl font-semibold py-8 text-[hsl(0_0%_17%)]">
         Alguns <em>cases</em> que já operam com essa estrutura:
       </h2>
 

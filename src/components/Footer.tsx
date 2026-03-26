@@ -3,10 +3,10 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const btnClass = "flex items-center justify-center w-full px-6 py-4 border border-white/20 rounded-xl text-white font-tiktok font-medium text-sm tracking-wider hover:bg-white/5 transition-colors text-center";
+  const btnClass = "flex items-center justify-center w-full px-6 py-4 border rounded-xl text-white font-tiktok font-medium text-sm tracking-wider transition-all duration-300 text-center min-h-[44px] border-white/20 hover:bg-white/5 hover:-translate-y-0.5";
 
   return (
-    <footer className="py-12 px-4 bg-black">
+    <footer className="py-12 px-4 bg-studio-dark">
       <div className="max-w-md mx-auto">
         <div className="flex justify-center mb-10">
           <img
