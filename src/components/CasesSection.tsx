@@ -8,14 +8,14 @@ const cases = [
     name: "Juliana Baldo",
     area: "Nutrologia | Emagrecimento | Clínica",
     description: "A Juliana saiu da dependência de convênios e da dupla jornada para uma agenda 100% particular. E hoje fecha consultas e tratamentos com poucas objeções porque a comunicação dela demonstra autoridade antes mesmo da consulta.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/4-1.png"
+    image: "/images/cases/3-2.png"
   },
   {
     emoji: "🌱",
     name: "Henry Luchetti",
     area: "Médico Tricologista",
     description: "Case regional de sucesso em transplante capilar. Em pouco tempo, Henry tornou-se o nome mais lembrado e mais buscado quando alguém decide resolver a calvície de verdade.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/1-1.png"
+    image: "/images/cases/1-2.png"
   },
   {
     emoji: "🦴",
@@ -29,14 +29,14 @@ const cases = [
     name: "Brenda Braga",
     area: "Fisioterapeuta Ortesista",
     description: "Com uma atuação única no tratamento de pés, Brenda virou referência em Catanduva (SP) e acelerou o crescimento do seu consultório com presença no Instagram, construindo autoridade e influência que viram pacientes e dinheiro.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/Design-sem-nome.png"
+    image: "/images/cases/4-2.png"
   },
   {
     emoji: "⚖️",
     name: "Fernanda Giacomini",
     area: "Direito de Família | Divórcio para mulheres",
     description: "Fernanda construiu uma marca pessoal forte em 10 anos de carreira, levantando debates sociais e emocionais com firmeza. Hoje, atende clientes do Brasil todo porque o alcance e a influência que ela construiu com estratégia nas redes sociais tornaram-se demanda e faturamento.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/3-1.png"
+    image: "/images/cases/5-2.png"
   }
 ];
 
