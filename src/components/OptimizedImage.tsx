@@ -20,7 +20,7 @@ const OptimizedImage = ({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative w-full h-full">
+    <>
       {!loaded && (
         <div className="absolute inset-0 animate-pulse rounded-md bg-muted" />
       )}
@@ -35,7 +35,7 @@ const OptimizedImage = ({
         height={height}
         onLoad={() => setLoaded(true)}
       />
-    </div>
+    </>
   );
 };
 
