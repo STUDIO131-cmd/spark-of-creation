@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-md mx-auto">
         <div className="flex justify-center mb-10">
           <img
-            src="https://www.studio131.com.br/wp-content/uploads/2026/01/PlanoProfissional-Aguia-02.png"
+            src="/images/PlanoProfissional-Aguia-02-footer.png"
             alt="Studio 131"
             className="h-16 md:h-24 w-auto opacity-60"
             loading="lazy"
