@@ -6,7 +6,7 @@ const differentials = [
     title: "Sistema CRM + Comercial",
     description: "Desenvolvemos um sistema próprio de CRM e acompanhamento comercial para uso diário de vendedores e secretárias.",
     highlight: "Scripts + Rotina + Geração de Demanda + Métricas",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/8-1.png"
+    image: "/images/diff/9-2.png"
   },
   {
     title: "Trabalho em equipe",
@@ -19,17 +19,17 @@ const differentials = [
       "Victor Hugo | Editor de Conteúdo",
       "Christopher Cardonha | Editor de Conteúdo"
     ],
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/5-1.png"
+    image: "/images/diff/6-2.png"
   },
   {
     title: "Resultados sólidos e experiência em tráfego orgânico",
     description: "Incentivamos e estudamos a fundo a geração de demanda com conteúdo orgânico, reduzindo a dependência de mídia paga.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/7-1.png"
+    image: "/images/diff/8-2.png"
   },
   {
     title: "Atendemos em estúdio ou in loco",
     description: "No Plano Profissional, atuamos somente na região de Catanduva (SP), onde temos escritório e estúdio próprio.",
-    image: "https://www.studio131.com.br/wp-content/uploads/2026/02/6-1.png"
+    image: "/images/diff/7-2.png"
   }
 ];
 
