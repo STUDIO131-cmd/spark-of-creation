@@ -1,4 +1,21 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { z } from "zod";
+
+const EMAILJS_SERVICE_ID = "service_l3hskrl";
+const EMAILJS_TEMPLATE_ID = "template_y5uergl";
+const EMAILJS_PUBLIC_KEY = "r2C6rMxegs-BaaEqv";
+
+const formSchema = z.object({
+  nome: z.string().trim().min(1, "Nome obrigatório").max(80),
+  sobrenome: z.string().trim().min(1, "Sobrenome obrigatório").max(80),
+  whatsapp: z.string().trim().min(8, "WhatsApp inválido").max(30),
+  areaCorreta: z.string().min(1),
+  areaAtuacao: z.string().trim().min(1).max(120),
+  timeComercial: z.string().min(1),
+  faturamento: z.string().min(1),
+  urgencia: z.string().min(1),
+});
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,28 +29,49 @@ const ContactForm = () => {
     urgencia: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const subject = encodeURIComponent(`Novo lead - ${formData.nome} ${formData.sobrenome}`);
-    const body = encodeURIComponent(
-      `Nome: ${formData.nome} ${formData.sobrenome}\n` +
-      `WhatsApp: ${formData.whatsapp}\n` +
-      `Área correta: ${formData.areaCorreta}\n` +
-      `Área de atuação: ${formData.areaAtuacao}\n` +
-      `Time comercial: ${formData.timeComercial}\n` +
-      `Faturamento: ${formData.faturamento}\n` +
-      `Urgência: ${formData.urgencia}`
-    );
-    
-    window.location.href = `mailto:igorgagliardi@studio131.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setError(null);
+
+    const parsed = formSchema.safeParse(formData);
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Dados inválidos");
+      return;
+    }
+
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          nome: parsed.data.nome,
+          sobrenome: parsed.data.sobrenome,
+          whatsapp: parsed.data.whatsapp,
+          areaCorreta: parsed.data.areaCorreta,
+          areaAtuacao: parsed.data.areaAtuacao,
+          timeComercial: parsed.data.timeComercial,
+          faturamento: parsed.data.faturamento,
+          urgencia: parsed.data.urgencia,
+          to_email: "igorgagliardi@studio131.com.br",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Não foi possível enviar agora. Tente novamente em instantes.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClass = "w-full px-4 py-3 rounded-lg border font-tiktok text-base focus:outline-none focus:ring-2 transition-all duration-300 min-h-[44px]" +
@@ -145,8 +183,16 @@ const ContactForm = () => {
             Limitamos a 10 clientes ativos para manter excelência.
           </p>
 
-          <button type="submit" className="w-full btn-gold text-lg py-4 font-tiktok min-h-[44px]">
-            Enviar
+          {error && (
+            <p className="font-tiktok text-sm text-center text-[hsl(0_70%_45%)]">{error}</p>
+          )}
+
+          <button
+            type="submit"
+            disabled={sending}
+            className="w-full btn-gold text-lg py-4 font-tiktok min-h-[44px] disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {sending ? "Enviando..." : "Enviar"}
           </button>
         </form>
       </div>
