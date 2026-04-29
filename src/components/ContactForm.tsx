@@ -1,10 +1,6 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { z } from "zod";
-
-const EMAILJS_SERVICE_ID = "service_l3hskrl";
-const EMAILJS_TEMPLATE_ID = "template_y5uergl";
-const EMAILJS_PUBLIC_KEY = "r2C6rMxegs-BaaEqv";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome obrigatório").max(80),
@@ -49,25 +45,13 @@ const ContactForm = () => {
 
     setSending(true);
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          nome: parsed.data.nome,
-          sobrenome: parsed.data.sobrenome,
-          whatsapp: parsed.data.whatsapp,
-          areaCorreta: parsed.data.areaCorreta,
-          areaAtuacao: parsed.data.areaAtuacao,
-          timeComercial: parsed.data.timeComercial,
-          faturamento: parsed.data.faturamento,
-          urgencia: parsed.data.urgencia,
-          to_email: "igorgagliardi@studio131.com.br",
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+      const { error: fnError } = await supabase.functions.invoke("send-contact-email", {
+        body: parsed.data,
+      });
+      if (fnError) throw fnError;
       setSubmitted(true);
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error("send-contact-email error:", err);
       setError("Não foi possível enviar agora. Tente novamente em instantes.");
     } finally {
       setSending(false);
