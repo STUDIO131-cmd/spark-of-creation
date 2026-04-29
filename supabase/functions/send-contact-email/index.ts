@@ -24,6 +24,33 @@ function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 }
 
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function sendWithRetry(message: Parameters<SMTPClient["sendAsync"]>[0], SMTP_USER: string, SMTP_PASS: string) {
+  let lastError: unknown;
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const client = new SMTPClient({
+        user: SMTP_USER,
+        password: SMTP_PASS,
+        host: SMTP_HOST,
+        port: SMTP_PORT,
+        ssl: true,
+      });
+
+      await client.sendAsync(message);
+      return;
+    } catch (err) {
+      lastError = err;
+      console.error(`SMTP send attempt ${attempt} failed:`, err);
+      if (attempt < 3) await wait(700 * attempt);
+    }
+  }
+
+  throw lastError;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
@@ -47,14 +74,6 @@ Deno.serve(async (req) => {
       }
     }
 
-    const client = new SMTPClient({
-      user: SMTP_USER,
-      password: SMTP_PASS,
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      ssl: true,
-    });
-
     const html = `
       <h2>Novo formulário de contato — Studio 131</h2>
       <p><strong>Nome:</strong> ${escapeHtml(data.nome)} ${escapeHtml(data.sobrenome)}</p>
@@ -75,13 +94,13 @@ Deno.serve(async (req) => {
       `Faturamento: ${data.faturamento}\n` +
       `Urgência: ${data.urgencia}\n`;
 
-    await client.sendAsync({
+    await sendWithRetry({
       from: SMTP_USER,
       to: TO_EMAIL,
       subject: `Novo contato — ${data.nome} ${data.sobrenome}`,
       text,
       attachment: [{ data: html, alternative: true }],
-    } as any);
+    } as any, SMTP_USER, SMTP_PASS);
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
