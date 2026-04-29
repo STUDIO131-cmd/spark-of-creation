@@ -47,6 +47,7 @@ const ContactForm = () => {
     try {
       const { error: fnError } = await supabase.functions.invoke("send-contact-email", {
         body: parsed.data,
+        region: "eu-central-1" as any,
       });
       if (fnError) throw fnError;
       setSubmitted(true);
