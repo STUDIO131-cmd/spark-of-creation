@@ -7,7 +7,7 @@ const corsHeaders = {
 
 const SMTP_HOST = "smtp.hostinger.com";
 const SMTP_PORT = 465;
-const TO_EMAIL = "igorgagliardi@studio131.com";
+const TO_EMAIL = "igorgagliardi@studio131.com.br";
 
 interface Payload {
   nome: string;
