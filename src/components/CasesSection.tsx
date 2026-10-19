@@ -21,7 +21,7 @@ const featuredCases = [
       "Natália buscava reposicionar sua marca para tornar a sua comunicação mais atraente. Estruturamos uma nova estratégia de redes sociais e comercial.",
       "Agora ela conta com uma rotina consistente de entrada de novas oportunidades e conversão."
     ],
-    image: "/images/cases/2-3.png"
+    image: "/images/cases/2-3.webp"
   }
 ];
 
