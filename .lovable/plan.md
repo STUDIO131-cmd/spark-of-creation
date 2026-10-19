@@ -15,15 +15,30 @@ Remover a imagem "médicos, clínicas, hof, estética & advocacia" (Dra. Giovana
 - Atualizar textos de Giovana Assad e Brenda Braga com os novos textos enviados.
 - Ficam 3 cases: Giovana, Brenda, Fernanda. Layout passa a ser 3 cards em linha no desktop, 2+1 centralizado no tablet, coluna única no celular.
 
-## 4. Formulário
-- Trocar "Seu negócio é em medicina, clínica ou advocacia?" por uma pergunta mais aberta. Sugestão:
-  **"Como você se apresenta no digital?"**
-  - Marca pessoal (profissional liberal)
-  - Empresa / clínica / escritório
-  - Ambos
-- Faixa de faturamento renomeada para "Faixa de faturamento mensal atual" com opções:
-  Entre 5 e 15k · Entre 15 - 30k · Entre 30k - 60k · 60k - 100k · Acima de 100k
-- O email recebido passa a mostrar a nova pergunta com o rótulo correto.
+## 4. Formulário (nova ordem)
+A pergunta "medicina, clínica ou advocacia?" sai. A "área de atuação" já cobre isso de forma aberta.
+
+1. Nome * / Sobrenome *
+2. WhatsApp *
+3. Instagram * — campo com "@" fixo à frente (placeholder: nomedousuario)
+4. Qual o nome do seu negócio? * — dica abaixo: "Se atua só com seu nome, repita-o aqui."
+5. Qual sua área de atuação? * — placeholder: "Ex.: nutrologia, harmonização facial, advocacia, contabilidade"
+6. **Você decide sobre investimentos em marketing?** * (versão mais simples da pergunta de posição)
+   - Sim, eu decido
+   - Decido junto com sócio(a)
+   - Não, outra pessoa decide
+7. **Quem cuida do seu marketing hoje?** * (versão mais curta)
+   - Eu mesmo(a)
+   - Alguém da equipe
+   - Freelancer ou agência
+   - Ninguém, está parado
+8. Você tem time comercial? * (mantida)
+9. Faixa de faturamento mensal atual * — Entre 5 e 15k · Entre 15 - 30k · Entre 30k - 60k · 60k - 100k · Acima de 100k
+10. Você precisa começar agora ou pode planejar? * (mantida)
+
+Por que simplificar a posição: a pergunta original mistura cargo e poder de decisão. O que importa para vendas é só "quem decide o investimento", então perguntar isso diretamente é mais rápido de responder e mais útil para filtrar.
+
+O email recebido mostra todos os campos novos com rótulos claros.
 
 ## 5. Rodapé
 Botão "131 FOTOS": remover o selo "EM BREVE" e apontar para https://fotos.studio131.com.br/
