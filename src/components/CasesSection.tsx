@@ -1,6 +1,18 @@
 import OptimizedImage from './OptimizedImage';
 import CardSkeleton from './CardSkeleton';
 import { useInView } from '@/hooks/useInView';
+import guilhermePhoto from '@/assets/case-guilherme-humel.png.asset.json';
+
+const featuredCase = {
+  emoji: "🦷",
+  name: "Dr. Guilherme Humel",
+  area: "Dentista",
+  paragraphs: [
+    "Guilherme construiu uma carreira baseada em reputação ao longo de mais de 10 anos, usando unicamente a indicação como canal de aquisição.",
+    "Agora está construindo a sua marca pessoal para continuar relevante — e usando a mídia social como recurso de reativação de pacientes e visibilidade."
+  ],
+  image: guilhermePhoto.url
+};
 
 const cases = [
   {
@@ -68,6 +80,51 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
   </div>
 );
 
+interface FeaturedCaseCardProps {
+  emoji: string;
+  name: string;
+  area: string;
+  paragraphs: string[];
+  image: string;
+}
+
+const FeaturedCaseCard = ({ emoji, name, area, paragraphs, image }: FeaturedCaseCardProps) => (
+  <div className="card-dark p-5 md:p-8">
+    <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6 md:gap-10 items-center">
+      <div className="overflow-hidden rounded-lg aspect-[16/10]">
+        <OptimizedImage
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          width={1215}
+          height={754}
+        />
+      </div>
+
+      <div>
+        <h3 className="font-tiktok font-semibold mb-2 text-3xl md:text-4xl text-card-title">
+          {emoji} {name}
+        </h3>
+
+        <p className="font-tiktok text-base md:text-lg mb-5 text-card-accent">
+          {area}
+        </p>
+
+        <div className="space-y-4">
+          {paragraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className="font-tiktok text-base md:text-lg leading-relaxed text-card-muted"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const CasesSection = () => {
   const { ref, isInView } = useInView();
 
@@ -79,6 +136,11 @@ const CasesSection = () => {
 
       {isInView ? (
         <>
+          {/* Case em destaque — ocupa a área inteira */}
+          <div className="max-w-6xl mx-auto mb-5">
+            <FeaturedCaseCard {...featuredCase} />
+          </div>
+
           {/* Desktop (lg+): 3 em linha */}
           <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
             {cases.map((caseItem, index) => (
