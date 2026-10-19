@@ -2,16 +2,28 @@ import OptimizedImage from './OptimizedImage';
 import CardSkeleton from './CardSkeleton';
 import { useInView } from '@/hooks/useInView';
 
-const featuredCase = {
-  emoji: "🦷",
-  name: "Dr. Guilherme Humel",
-  area: "Dentista",
-  paragraphs: [
-    "Guilherme construiu uma carreira baseada em reputação ao longo de mais de 10 anos, usando unicamente a indicação como canal de aquisição.",
-    "Agora está construindo a sua marca pessoal para continuar relevante — e usando a mídia social como recurso de reativação de pacientes e visibilidade."
-  ],
-  image: "/images/cases/6-2.png"
-};
+const featuredCases = [
+  {
+    emoji: "🦷",
+    name: "Dr. Guilherme Humel",
+    area: "Dentista",
+    paragraphs: [
+      "Guilherme construiu uma carreira baseada em reputação ao longo de mais de 10 anos, usando unicamente a indicação como canal de aquisição.",
+      "Agora está construindo a sua marca pessoal para continuar relevante — e usando a mídia social como recurso de reativação de pacientes e visibilidade."
+    ],
+    image: "/images/cases/6-2.png"
+  },
+  {
+    emoji: "🥗",
+    name: "Natália Bertoni",
+    area: "Nutricionista",
+    paragraphs: [
+      "Natália buscava reposicionar sua marca para tornar a sua comunicação mais atraente. Estruturamos uma nova estratégia de redes sociais e comercial.",
+      "Agora ela conta com uma rotina consistente de entrada de novas oportunidades e conversão."
+    ],
+    image: "/images/cases/2-3.png"
+  }
+];
 
 const cases = [
   {
@@ -135,9 +147,9 @@ const CasesSection = () => {
 
       {isInView ? (
         <>
-          {/* Case em destaque — ocupa a área inteira */}
+          {/* Case em destaque — abre a seção em área inteira */}
           <div className="max-w-6xl mx-auto mb-5">
-            <FeaturedCaseCard {...featuredCase} />
+            <FeaturedCaseCard {...featuredCases[0]} />
           </div>
 
           {/* Desktop (lg+): 3 em linha */}
@@ -163,6 +175,11 @@ const CasesSection = () => {
             {cases.map((caseItem, index) => (
               <CaseCard key={index} {...caseItem} />
             ))}
+          </div>
+
+          {/* Case em destaque — fecha a seção em área inteira */}
+          <div className="max-w-6xl mx-auto mt-5">
+            <FeaturedCaseCard {...featuredCases[1]} />
           </div>
         </>
       ) : (
