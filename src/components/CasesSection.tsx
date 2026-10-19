@@ -28,14 +28,14 @@ const featuredCases = [
 const cases = [
   {
     emoji: "🦴",
-    name: "Giovana Assad",
+    name: "Dra. Giovana Assad",
     area: "Médica Ortopedista",
     description: "9 anos de medicina + estudo constante. Com fellowship em dor, a Giovana trouxe tratamentos ortobiológicos para a prática e com a utilização dos canais digitais e estratégia de conteúdo, tornou-se referência regional no assunto: clínica em evidência, mais confiança nas decisões e uma agenda que cresce no particular.",
     image: "/images/cases/2-2.png"
   },
   {
     emoji: "🦶",
-    name: "Brenda Braga",
+    name: "Dra. Brenda Braga",
     area: "Fisioterapeuta Ortesista",
     description: "Com uma atuação única no tratamento de pés e tornozelos, Brenda tornou-se referência regional na fisioterapia e acelerou o crescimento do seu consultório com presença consistente no Instagram gerando influência, indicações e entrada constante de novos pacientes.",
     image: "/images/cases/4-2.png"
