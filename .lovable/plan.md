@@ -1,138 +1,35 @@
+# Atualizações de conteúdo da página
 
+## 1. Topo (header)
+Substituir os textos por:
+- "Criamos o seu conteúdo no *Instagram*" / "(mas não é só isso)" (mesmo estilo de duas linhas atual)
+- "— O PLANO É UM MÉTODO."
+- "Para marcas pessoais ou negócios que desejam estruturar o canal digital como ativo gerador de visibilidade, demanda e receita."
+- Nova linha em destaque: "Operação + Consultoria"
 
-## Refactoring Completo — Design System Studio 131
+## 2. Slider (segunda seção)
+Remover a imagem "médicos, clínicas, hof, estética & advocacia" (Dra. Giovana) da lista de slides. Identifico qual dos 9 arquivos é comparando visualmente antes de remover.
 
-Este é um refactoring extenso que toca praticamente todos os arquivos do projeto. Vou organizar em fases claras.
+## 3. Cases
+- Remover Juliana Baldo e Henry Luchetti.
+- Atualizar textos de Giovana Assad e Brenda Braga com os novos textos enviados.
+- Ficam 3 cases: Giovana, Brenda, Fernanda. Layout passa a ser 3 cards em linha no desktop, 2+1 centralizado no tablet, coluna única no celular.
 
----
+## 4. Formulário
+- Trocar "Seu negócio é em medicina, clínica ou advocacia?" por uma pergunta mais aberta. Sugestão:
+  **"Como você se apresenta no digital?"**
+  - Marca pessoal (profissional liberal)
+  - Empresa / clínica / escritório
+  - Ambos
+- Faixa de faturamento renomeada para "Faixa de faturamento mensal atual" com opções:
+  Entre 5 e 15k · Entre 15 - 30k · Entre 30k - 60k · 60k - 100k · Acima de 100k
+- O email recebido passa a mostrar a nova pergunta com o rótulo correto.
 
-### Fase 1: Design System — Variáveis CSS e Cores
+## 5. Rodapé
+Botão "131 FOTOS": remover o selo "EM BREVE" e apontar para https://fotos.studio131.com.br/
 
-**Arquivo: `src/index.css`**
+## 6. Destino dos formulários (resposta)
+Hoje cada envio dispara um email via SMTP da Hostinger (usando a conta configurada nos segredos) para **igorgagliardi@studio131.com.br**. Os envios **não ficam salvos** em lugar nenhum além do email — se um email falhar ou cair no spam, o contato se perde. Recomendo (opcional, só se aprovar) também guardar cada envio numa tabela no backend como cópia de segurança.
 
-Mapear todas as cores atuais para a paleta Studio 131:
-
-| Cor Atual | Uso | Nova Cor Studio 131 |
-|-----------|-----|---------------------|
-| `#CF8B46` / `#E6B281` (gold/accent) | Destaques, botões, links | `#d87e5f` (tom quente) |
-| `#F59E05` (hero bg fallback) | Background Hero | `#d15e4a` (tom quente) |
-| `#350328` (ticker bg) | Ticker background | `#3c0e29` (vinho) |
-| `#000602` (card-dark bg) | Cards escuros | `#2b2b2b` (preto técnico) |
-| `#F6FAFF` (card title) | Títulos em cards | `#efe7da` (creme) |
-| `#E3E4E3` (card body) | Texto corpo cards | `#eaeaea` (neutro) |
-| `bg-white` (seções claras) | Backgrounds claros | `#efe7da` (creme principal) |
-| `bg-gray-50` (form bg) | Background formulário | `#eaeaea` |
-| `gray-300/500/600/700` | Bordas, labels, textos | Neutros: `#cfcece`, `#888989`, `#515151` |
-| `bg-black` (seções escuras) | Backgrounds escuros | `#2b2b2b` (preto técnico) |
-| `amber-500` (focus ring) | Focus state | `#d87e5f` |
-| `bg-gray-900` (video bg) | Video container | `#2b2b2b` |
-
-Atualizar as classes semânticas em `@layer components`:
-- `.text-gold`, `.border-gold`, `.bg-gold` → `#d87e5f`
-- `.btn-gold` → bg `#d87e5f`, hover `#c73c32`
-- `.bg-ticker` → `#3c0e29`
-- `.card-dark` → bg `#2b2b2b`
-- `.text-card-title` → `#efe7da`
-- `.text-card-accent` → `#d87e5f`
-- `.text-card-body` → `#eaeaea`
-
-Atualizar variáveis CSS `:root` para usar tons da paleta Studio 131 (converter hex para HSL).
-
----
-
-### Fase 2: Tipografia Unificada — TikTok Sans
-
-**Arquivo: `src/index.css`**
-
-- Remover as declarações `@font-face` de NT Epika e Moneta
-- Manter apenas TikTok Sans (já presente com Light, Regular, Medium, SemiBold, Bold)
-- Atualizar classes `.font-display`, `.font-body` para apontar para TikTok Sans
-- Garantir `font-display: swap` em todas as declarações (já implementado)
-
-**Todos os componentes**: Substituir `font-moneta` e `font-epika` por `font-tiktok`.
-
-Componentes afetados: `CasesSection.tsx`, `DifferentialsSection.tsx`
-
----
-
-### Fase 3: Atualização de Cores nos Componentes
-
-**`HeroSection.tsx`**: `backgroundColor: '#F59E05'` → `'#d15e4a'`
-
-**`VideoSection.tsx`**: `stroke="#CF8B46"` → `stroke="#d87e5f"`, `bg-gray-900` → estilo inline `#2b2b2b`
-
-**`ContactForm.tsx`**:
-- `bg-gray-50` → estilo `#eaeaea`
-- `border-gray-300` → `border-[#cfcece]`
-- `text-gray-700` → `text-[#515151]`
-- `text-gray-600` → `text-[#888989]`
-- `text-gray-500` → `text-[#888989]`
-- `ring-amber-500` → `ring-[#d87e5f]`
-- `style={{ color: '#CF8B46' }}` → `#d87e5f`
-
-**`Footer.tsx`**: `bg-black` → `bg-[#2b2b2b]`
-
-**`Index.tsx`**: `bg-white` → `bg-[#efe7da]`
-
-**`CasesSection.tsx`**: `bg-white` → `bg-[#efe7da]`
-
-**`DifferentialsSection.tsx`**: `bg-white` → `bg-[#efe7da]`
-
----
-
-### Fase 4: Micro-interações e Performance Premium
-
-**Todos os componentes interativos**:
-- Adicionar `transition-all duration-300 ease-in-out` em botões, links, cards
-- Cards: `hover:scale-[1.02] hover:shadow-xl transition-all duration-300`
-- Botões de navegação do carrossel: aumentar área de toque para `min-w-[44px] min-h-[44px]`
-- Radio buttons no form: `min-w-[44px] min-h-[44px]` para área de toque
-- Dots do carrossel: `w-3 h-3` (mínimo 44px com padding)
-
-**Safe Areas (iOS/Android)**:
-- Adicionar `env(safe-area-inset-*)` no body/root via CSS
-- `padding-top: env(safe-area-inset-top)` no hero
-- `padding-bottom: env(safe-area-inset-bottom)` no footer
-
-**Overflow prevention**:
-- Adicionar `overflow-x: hidden` no root `<div>` e `<body>`
-
----
-
-### Fase 5: Responsividade e Touch
-
-**`src/index.css`** (global):
-```css
-html { -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; }
-@supports (padding: env(safe-area-inset-top)) {
-  body {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-```
-
-**Todos os botões e links interativos**: Garantir `min-h-[44px] min-w-[44px]` (WCAG touch target).
-
-**Carrossel arrows**: Aumentar de 32px para 44px.
-
----
-
-### Resumo de Arquivos Modificados
-
-| Arquivo | Mudanças |
-|---------|----------|
-| `src/index.css` | Cores, tipografia, safe areas, overflow, variáveis CSS |
-| `src/pages/Index.tsx` | bg-white → bg creme |
-| `src/components/HeroSection.tsx` | Cor fallback |
-| `src/components/ServicesTicker.tsx` | Já usa classes semânticas (atualizam via CSS) |
-| `src/components/ImageCarousel.tsx` | Touch targets, transition |
-| `src/components/ValueProposition.tsx` | Já usa classes semânticas |
-| `src/components/CasesSection.tsx` | bg-white → creme, font-moneta → font-tiktok, hover cards |
-| `src/components/VideoSection.tsx` | Cores inline, bg-gray |
-| `src/components/DifferentialsSection.tsx` | bg-white → creme, font-moneta → font-tiktok, hover cards |
-| `src/components/CtaSection.tsx` | Já usa classes semânticas |
-| `src/components/ContactForm.tsx` | Todas as cores gray → paleta Studio 131 |
-| `src/components/Footer.tsx` | bg-black → preto técnico |
-
+## Detalhes técnicos
+- Arquivos: HeroSection.tsx, ImageCarousel.tsx, CasesSection.tsx, ContactForm.tsx, Footer.tsx, supabase/functions/send-contact-email/index.ts (rótulo do campo `areaCorreta` no email; nome do campo mantido para compatibilidade).
