@@ -1,7 +1,6 @@
 import OptimizedImage from './OptimizedImage';
 import CardSkeleton from './CardSkeleton';
 import { useInView } from '@/hooks/useInView';
-import guilhermePhoto from '@/assets/case-guilherme-humel.png.asset.json';
 
 const featuredCase = {
   emoji: "🦷",
@@ -11,7 +10,7 @@ const featuredCase = {
     "Guilherme construiu uma carreira baseada em reputação ao longo de mais de 10 anos, usando unicamente a indicação como canal de aquisição.",
     "Agora está construindo a sua marca pessoal para continuar relevante — e usando a mídia social como recurso de reativação de pacientes e visibilidade."
   ],
-  image: guilhermePhoto.url
+  image: "/images/cases/6-2.png"
 };
 
 const cases = [
