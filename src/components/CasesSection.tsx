@@ -69,7 +69,7 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
       />
     </div>
 
-    <h3 className="font-tiktok font-semibold mb-2 text-2xl md:text-3xl min-h-[40px] md:min-h-[48px] text-card-title">
+    <h3 className="font-tiktok font-semibold mb-2 text-xl md:text-2xl min-h-[32px] md:min-h-[40px] text-card-title whitespace-nowrap">
       {emoji} {name}
     </h3>
     
@@ -77,15 +77,7 @@ const CaseCard = ({ emoji, name, area, description, image }: CaseCardProps) => (
       {area}
     </p>
     
-    <p 
-      className="font-tiktok text-sm leading-relaxed min-h-[120px] text-card-muted"
-      style={{ 
-        display: '-webkit-box',
-        WebkitLineClamp: 6,
-        WebkitBoxOrient: 'vertical',
-        overflow: 'hidden'
-      }}
-    >
+    <p className="font-tiktok text-sm leading-relaxed text-card-muted">
       {description}
     </p>
   </div>
