@@ -27,11 +27,8 @@ const Footer = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-3">
-          <a href="#" className={btnClass}>
-            <span className="flex items-center justify-center gap-2">
-              131 FOTOS
-              <span className="px-1.5 py-0.5 text-[9px] font-bold tracking-wider uppercase rounded bg-card-accent/20 text-card-accent border border-card-accent/30 leading-none">EM BREVE</span>
-            </span>
+          <a href="https://fotos.studio131.com.br/" className={btnClass}>
+            131 FOTOS
           </a>
           <a href="https://campanhas.studio131.com.br" className={btnClass}>
             CAMPANHAS
