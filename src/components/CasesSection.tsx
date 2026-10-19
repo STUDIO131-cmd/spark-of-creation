@@ -89,7 +89,7 @@ interface FeaturedCaseCardProps {
 
 const FeaturedCaseCard = ({ emoji, name, area, paragraphs, image }: FeaturedCaseCardProps) => (
   <div className="card-dark p-5 md:p-8">
-    <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6 md:gap-10 items-center">
+    <div className="grid lg:grid-cols-[1.25fr_1fr] gap-6 md:gap-10 items-center">
       <div className="overflow-hidden rounded-lg aspect-[16/10]">
         <OptimizedImage
           src={image}
