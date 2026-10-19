@@ -9,16 +9,21 @@ const SMTP_HOST = "smtp.hostinger.com";
 const SMTP_PORT = 465;
 const TO_EMAIL = "igorgagliardi@studio131.com.br";
 
-interface Payload {
-  nome: string;
-  sobrenome: string;
-  whatsapp: string;
-  areaCorreta: string;
-  areaAtuacao: string;
-  timeComercial: string;
-  faturamento: string;
-  urgencia: string;
-}
+const FIELDS = [
+  ["nome", "Nome"],
+  ["sobrenome", "Sobrenome"],
+  ["whatsapp", "WhatsApp"],
+  ["instagram", "Instagram"],
+  ["nomeNegocio", "Nome do negócio"],
+  ["areaAtuacao", "Área de atuação"],
+  ["decisao", "Decide investimento em marketing"],
+  ["marketingHoje", "Quem cuida do marketing hoje"],
+  ["timeComercial", "Time comercial"],
+  ["faturamento", "Faturamento mensal atual"],
+  ["urgencia", "Urgência"],
+] as const;
+
+type Payload = Record<(typeof FIELDS)[number][0], string>;
 
 function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
@@ -63,9 +68,7 @@ Deno.serve(async (req) => {
 
     const data = (await req.json()) as Payload;
 
-    // Validação básica
-    const required: (keyof Payload)[] = ["nome", "sobrenome", "whatsapp", "areaCorreta", "areaAtuacao", "timeComercial", "faturamento", "urgencia"];
-    for (const k of required) {
+    for (const [k] of FIELDS) {
       if (!data[k] || typeof data[k] !== "string" || data[k].length > 500) {
         return new Response(JSON.stringify({ error: `Campo inválido: ${k}` }), {
           status: 400,
@@ -74,25 +77,11 @@ Deno.serve(async (req) => {
       }
     }
 
-    const html = `
-      <h2>Novo formulário de contato — Studio 131</h2>
-      <p><strong>Nome:</strong> ${escapeHtml(data.nome)} ${escapeHtml(data.sobrenome)}</p>
-      <p><strong>WhatsApp:</strong> ${escapeHtml(data.whatsapp)}</p>
-      <p><strong>Área correta (medicina/clínica/advocacia):</strong> ${escapeHtml(data.areaCorreta)}</p>
-      <p><strong>Área de atuação:</strong> ${escapeHtml(data.areaAtuacao)}</p>
-      <p><strong>Time comercial:</strong> ${escapeHtml(data.timeComercial)}</p>
-      <p><strong>Faturamento:</strong> ${escapeHtml(data.faturamento)}</p>
-      <p><strong>Urgência:</strong> ${escapeHtml(data.urgencia)}</p>
-    `;
+    const html = `<h2>Novo formulário de contato — Studio 131</h2>` +
+      FIELDS.map(([k, l]) => `<p><strong>${l}:</strong> ${escapeHtml(data[k])}</p>`).join("");
 
     const text = `Novo formulário de contato\n\n` +
-      `Nome: ${data.nome} ${data.sobrenome}\n` +
-      `WhatsApp: ${data.whatsapp}\n` +
-      `Área correta: ${data.areaCorreta}\n` +
-      `Área de atuação: ${data.areaAtuacao}\n` +
-      `Time comercial: ${data.timeComercial}\n` +
-      `Faturamento: ${data.faturamento}\n` +
-      `Urgência: ${data.urgencia}\n`;
+      FIELDS.map(([k, l]) => `${l}: ${data[k]}`).join("\n");
 
     await sendWithRetry({
       from: SMTP_USER,

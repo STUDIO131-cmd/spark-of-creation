@@ -24,7 +24,7 @@ const HeroSection = () => {
       {/* Subtitle */}
       <div className="font-tiktok text-white text-center mt-6 md:mt-8 space-y-1 tracking-wide">
         <p className="text-base md:text-xl lg:text-2xl font-normal">
-          Fazemos seu conteúdo no <em>Instagram</em>
+          Criamos o seu conteúdo no <em>Instagram</em>
         </p>
         <p className="text-base md:text-xl lg:text-2xl font-semibold">
           (mas não é só isso)
@@ -38,7 +38,11 @@ const HeroSection = () => {
 
       {/* Descrição */}
       <p className="font-tiktok text-white/90 text-center text-sm md:text-lg leading-relaxed mt-6 max-w-xl tracking-wide px-2">
-        Nós operamos a estratégia de comunicação enquanto o dono segue focado na operação do negócio.
+        Para marcas pessoais ou negócios que desejam estruturar o canal digital como ativo gerador de visibilidade, demanda e receita.
+      </p>
+
+      <p className="font-tiktok text-white text-center text-sm md:text-lg font-semibold tracking-[0.15em] uppercase mt-4">
+        Operação + Consultoria
       </p>
     </section>
   );

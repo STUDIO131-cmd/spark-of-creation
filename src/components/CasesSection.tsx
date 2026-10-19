@@ -4,31 +4,17 @@ import { useInView } from '@/hooks/useInView';
 
 const cases = [
   {
-    emoji: "💉",
-    name: "Juliana Baldo",
-    area: "Nutrologia | Emagrecimento | Clínica",
-    description: "A Juliana saiu da dependência de convênios e da dupla jornada para uma agenda 100% particular. E hoje fecha consultas e tratamentos com poucas objeções porque a comunicação dela demonstra autoridade antes mesmo da consulta.",
-    image: "/images/cases/3-2.png"
-  },
-  {
-    emoji: "🌱",
-    name: "Henry Luchetti",
-    area: "Médico Tricologista",
-    description: "Case regional de sucesso em transplante capilar. Em pouco tempo, Henry tornou-se o nome mais lembrado e mais buscado quando alguém decide resolver a calvície de verdade.",
-    image: "/images/cases/1-2.png"
-  },
-  {
     emoji: "🦴",
     name: "Giovana Assad",
     area: "Médica Ortopedista",
-    description: "9 anos de medicina + estudo constante. Com fellowship em dor, a Giovana trouxe tratamentos ortobiológicos para a prática e virou referência: clínica em evidência, mais confiança nas decisões e uma agenda que cresce no particular.",
+    description: "9 anos de medicina + estudo constante. Com fellowship em dor, a Giovana trouxe tratamentos ortobiológicos para a prática e com a utilização dos canais digitais e estratégia de conteúdo, tornou-se referência regional no assunto: clínica em evidência, mais confiança nas decisões e uma agenda que cresce no particular.",
     image: "/images/cases/2-2.png"
   },
   {
     emoji: "🦶",
     name: "Brenda Braga",
     area: "Fisioterapeuta Ortesista",
-    description: "Com uma atuação única no tratamento de pés, Brenda virou referência em Catanduva (SP) e acelerou o crescimento do seu consultório com presença no Instagram, construindo autoridade e influência que viram pacientes e dinheiro.",
+    description: "Com uma atuação única no tratamento de pés e tornozelos, Brenda tornou-se referência regional na fisioterapia e acelerou o crescimento do seu consultório com presença consistente no Instagram gerando influência, indicações e entrada constante de novos pacientes.",
     image: "/images/cases/4-2.png"
   },
   {
@@ -93,28 +79,21 @@ const CasesSection = () => {
 
       {isInView ? (
         <>
-          {/* Desktop (lg+): 3 + 2 centralizado */}
+          {/* Desktop (lg+): 3 em linha */}
           <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
-            {cases.slice(0, 3).map((caseItem, index) => (
+            {cases.map((caseItem, index) => (
               <CaseCard key={index} {...caseItem} />
             ))}
           </div>
-          <div className="hidden lg:grid grid-cols-2 gap-5 mt-5 max-w-none w-2/3 mx-auto">
-            {cases.slice(3, 5).map((caseItem, index) => (
-              <CaseCard key={index + 3} {...caseItem} />
-            ))}
-          </div>
 
-          {/* Tablet (md): 2x2 + 1 centralizada */}
+          {/* Tablet (md): 2 + 1 centralizada */}
           <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 max-w-4xl mx-auto">
             <CaseCard {...cases[0]} />
             <CaseCard {...cases[1]} />
-            <CaseCard {...cases[2]} />
-            <CaseCard {...cases[4]} />
           </div>
           <div className="hidden md:flex lg:hidden justify-center mt-5 max-w-4xl mx-auto">
             <div className="w-1/2">
-              <CaseCard {...cases[3]} />
+              <CaseCard {...cases[2]} />
             </div>
           </div>
 
