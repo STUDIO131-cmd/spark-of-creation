@@ -1,7 +1,6 @@
 import OptimizedImage from './OptimizedImage';
 import CardSkeleton from './CardSkeleton';
 import { useInView } from '@/hooks/useInView';
-import nataliaCaseAsset from '@/assets/natalia-bertoni.webp.asset.json';
 
 const featuredCases = [
   {
@@ -22,7 +21,7 @@ const featuredCases = [
       "Natália buscava reposicionar sua marca para tornar a sua comunicação mais atraente. Estruturamos uma nova estratégia de redes sociais e comercial.",
       "Agora ela conta com uma rotina consistente de entrada de novas oportunidades e conversão."
     ],
-    image: nataliaCaseAsset.url
+    image: "/images/cases/2-3.webp"
   }
 ];
 
